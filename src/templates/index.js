@@ -5,6 +5,12 @@ import Helmet from 'react-helmet'
 
 import { Layout } from '../components/common';
 
+const getShortDate = (stringDate) => {
+    const date = new Date(stringDate);
+
+    return `${("0" + date.getDate()).slice(-2)}/${("0" + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`
+}
+
 export const pageQuery = graphql`
     {
         allGhostPost(
@@ -46,13 +52,8 @@ const Index = ({ data }) => {
                         <ul className="item" key={node.id}>
                             <li>
                                 <a href={`/${node.slug}`} title={node.title}>
-                                    <span className="date">{
-                                        new Date(node.published_at).toLocaleDateString('pt-PT', {
-                                            day: '2-digit',
-                                            month: '2-digit',
-                                            year: 'numeric',
-                                        })
-                                    }</span><br/> {node.title}
+                                    <span className="date">{getShortDate(node.published_at)}</span>
+                                    <br/> {node.title}
                                 </a>
                             </li>
                         </ul>
