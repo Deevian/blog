@@ -47,7 +47,7 @@ const Index = ({ data }) => {
                             <li>
                                 <a href={`/${node.slug}`} title={node.title}>
                                     <span className="date">{
-                                        new Date(node.created_at).toLocaleDateString('pt-PT', {
+                                        new Date(node.published_at).toLocaleDateString('pt-PT', {
                                             day: '2-digit',
                                             month: '2-digit',
                                             year: 'numeric',
