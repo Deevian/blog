@@ -1,10 +1,4 @@
 {
-  "development": {
-    "apiUrl": "https://admin.deev.io",
-    "contentApiKey": "9e140acf51983df50a2a69bb13"
-  },
-  "production": {
-    "apiUrl": "https://admin.deev.io",
-    "contentApiKey": "9e140acf51983df50a2a69bb13"
-  }
+  "apiUrl": "https://admin.deev.io",
+  "contentApiKey": "9e140acf51983df50a2a69bb13"
 }

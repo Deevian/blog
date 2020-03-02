@@ -1,1 +1,1 @@
-Nothing to see here, keep moving.
+Is this a blog?
