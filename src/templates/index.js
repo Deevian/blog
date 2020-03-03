@@ -61,55 +61,6 @@ const Index = ({ data }) => {
 
                     <ul className="item">
                         <li>
-                            <a href="https://ghost.deev.io/sem-titulo/" title="(sem título)">
-                                <span className="date">09/06/2018</span><br/> (sem título)
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
-                            <a href="https://ghost.deev.io/lilac/" title="Lilac">
-                                <span className="date">02/09/2016</span><br/> Lilac
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
-                            <a href="https://ghost.deev.io/dois/" title="Dois">
-                                <span className="date">01/09/2015</span><br/> Dois
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
-                            <a href="https://ghost.deev.io/branco/" title="Branco">
-                                <span className="date">01/06/2015</span><br/> Branco
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
-                            <a href="https://ghost.deev.io/silencio/" title="Silêncio">
-                                <span className="date">22/01/2015</span><br/> Silêncio
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
-                            <a href="https://ghost.deev.io/197/" title="197">
-                                <span className="date">20/07/2014</span><br/> 197
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
-                            <a href="https://ghost.deev.io/ponto-inicial/" title="Ponto Inicial">
-                                <span className="date">15/06/2014</span><br/> Ponto Inicial
-                            </a>
-                        </li>
-                    </ul>
-                    <ul className="item">
-                        <li>
                             <a href="https://voaremterra.wordpress.com/2014/06/01/voltar/" title="Voltar">
                                 <span className="date">01/06/2014</span><br/> Voltar
                             </a>
