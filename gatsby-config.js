@@ -11,7 +11,6 @@ module.exports = {
             resolve: `gatsby-source-ghost`,
             options: ghostConfig
         },
-        `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-google-analytics`,
