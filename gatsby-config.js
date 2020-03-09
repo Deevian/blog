@@ -1,4 +1,3 @@
-const path = require(`path`);
 const ghostConfig = require(`./.ghost`);
 
 
@@ -18,5 +17,6 @@ module.exports = {
                 trackingId: "UA-51942336-2",
             },
         },
+        { resolve: 'gatsby-matomo' }
     ],
 };
