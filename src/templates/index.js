@@ -42,7 +42,7 @@ const Index = ({ data }) => {
 
             <main className="index">
                 <nav className="nav">
-                    <img alt="O Ponto Laranja" src="/favicon.ico"/>
+                    <img alt="O Ponto Laranja" src="/orange.png"/>
                 </nav>
 
                 <h1 className="title">O Ponto Laranja</h1>

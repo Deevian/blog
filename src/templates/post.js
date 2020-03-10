@@ -37,7 +37,7 @@ const Post = ({ data }) => {
             <main className="post">
                 <nav className="nav active">
                     <a href="/">
-                        <img alt="Índice" src="/favicon.ico"/>
+                        <img alt="Índice" src="/orange.png"/>
                     </a>
                 </nav>
 
