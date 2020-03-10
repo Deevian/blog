@@ -37,15 +37,15 @@ const Index = ({ data }) => {
     return (
         <Layout>
             <Helmet>
-                <title>Índice</title>
+                <title>O Ponto Laranja</title>
             </Helmet>
 
             <main className="index">
                 <nav className="nav">
-                    <img alt="Índice" src="/favicon.ico"/>
+                    <img alt="O Ponto Laranja" src="/favicon.ico"/>
                 </nav>
 
-                <h1 className="title">Índice</h1>
+                <h1 className="title">O Ponto Laranja</h1>
                 <section>
 
                     {posts.map(({ node }) => (

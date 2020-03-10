@@ -13,7 +13,6 @@ export const postQuery = graphql`
     }
 `;
 
-
 const propTypes = {
     data: PropTypes.shape({
         ghostPost: PropTypes.shape({
