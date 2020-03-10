@@ -3,7 +3,7 @@ const ghostConfig = require(`./.ghost`);
 
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://deev.io`,
+        siteUrl: `https://opontolaranja.pt`,
     },
     plugins: [
         {
