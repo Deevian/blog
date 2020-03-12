@@ -74,7 +74,7 @@ body {
 }
 
 .item > li {
-    text-indent: 0rem;
+    text-indent: 0;
 }
 
 .item a {
@@ -98,7 +98,7 @@ body {
     max-width: 500px;
 }
 
-.post p {
+.post p, .post blockquote {
     font-family: 'Georgia', serif;
     font-weight: normal;
 
@@ -108,6 +108,15 @@ body {
     text-align: left;
 
     color: #333;
+}
+
+.post blockquote {
+    padding-left: 1rem;
+    border-left: 1px solid #666;
+
+    text-indent: 0;
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
 .post a {
@@ -140,6 +149,10 @@ body {
     .post p {
         margin: 0 0 24px;
     }
+
+    .post blockquote {
+        margin: 12px 0 32px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -165,5 +178,9 @@ body {
 
     .post p {
         margin: 0 0 12px;
+    }
+
+    .post blockquote {
+        margin: 12px 0 20px;
     }
 }
