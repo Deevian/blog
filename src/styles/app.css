@@ -98,7 +98,7 @@ body {
     max-width: 500px;
 }
 
-.post p, .post blockquote {
+.post p, .post blockquote, .post ul {
     font-family: 'Georgia', serif;
     font-weight: normal;
 
@@ -108,6 +108,14 @@ body {
     text-align: left;
 
     color: #333;
+}
+
+.post ul {
+    text-indent: 0;
+}
+
+.post li + li {
+    margin-top: 1rem;
 }
 
 .post blockquote {
