@@ -22,6 +22,10 @@ const DefaultLayout = ({ data, children }) => {
 
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:site_name" content="O Ponto Laranja" />
+                <meta property="og:title" content="Índice" />
+                <meta property="og:image" content="https://opontolaranja.pt/orange.png" />
+                <meta name="twitter:card" content="summary_large_image" />
 
                 <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet" />
 

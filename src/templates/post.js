@@ -32,6 +32,8 @@ const Post = ({ data }) => {
             <Helmet>
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
                 <title>{post.title}</title>
+
+                <meta property="og:title" content={post.title} />
             </Helmet>
 
             <main className="post">
