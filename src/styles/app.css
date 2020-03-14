@@ -18,7 +18,7 @@ body {
 
 .post {
     min-height: 100%;
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .nav {
@@ -97,7 +97,7 @@ body {
 .post-body {
     font-family: 'Georgia', serif;
     font-weight: normal;
-    line-height: 24px;
+    line-height: 26px;
     color: #333;
 }
 
@@ -111,6 +111,8 @@ body {
 
     font-style: italic;
     font-size: 0.9rem;
+
+    line-height: 24px;
 }
 
 .post-body a {
