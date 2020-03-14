@@ -44,7 +44,7 @@ const Post = ({ data }) => {
                 </nav>
 
                 <h1 className="title">{post.title}</h1>
-                <section dangerouslySetInnerHTML={{ __html: post.html }}/>
+                <section className="post-body" dangerouslySetInnerHTML={{ __html: post.html }}/>
             </main>
         </Layout>
 
