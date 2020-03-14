@@ -53,6 +53,7 @@ body {
 }
 
 .item {
+    font-size: 1rem;
     font-family: 'Georgia', serif;
     font-weight: normal;
 
@@ -87,9 +88,9 @@ body {
 
 .date {
     display: block;
-    margin-top: -0.1rem;
+    margin-top: -0.2rem;
 
-    font-size: .85rem;
+    font-size: .8rem;
     color: #999;
 }
 
@@ -121,6 +122,7 @@ body {
 }
 
 .divider {
+    font-family: 'Georgia', serif;
     width: 25%;
     font-size: 0.9rem;
 
@@ -130,7 +132,8 @@ body {
 }
 
 .divider hr {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ccc;
+    border-bottom: 0;
 }
 
 .divider:nth-of-type(1) {
