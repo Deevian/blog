@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet'
 
-import { Layout } from '../components/common';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import 'dayjs/locale/pt'
 
-const getShortDate = (stringDate) => {
-    const date = new Date(stringDate);
+dayjs.extend(localizedFormat);
+dayjs.locale('pt');
 
-    return `${("0" + date.getDate()).slice(-2)}/${("0" + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`
-}
+import { Layout, Divider } from '../components/common';
 
 export const pageQuery = graphql`
     {
@@ -32,6 +33,8 @@ const propTypes = {
 };
 
 const Index = ({ data }) => {
+    let lastYear;
+
     const posts = data.allGhostPost.edges;
 
     return (
@@ -47,16 +50,31 @@ const Index = ({ data }) => {
 
                 <h1 className="title">O Ponto Laranja</h1>
                 <section>
-                    {posts.map(({ node }) => (
-                        <ul className="item" key={node.id}>
-                            <li>
-                                <a href={`/${node.slug}`} title={node.title}>
-                                    <span className="date">{getShortDate(node.published_at)}</span>
-                                    <br/> {node.title}
-                                </a>
-                            </li>
-                        </ul>
-                    ))}
+                    {posts.map(({ node }) => {
+                        const date = dayjs(node.published_at);
+                        const year = date.year();
+
+                        const post = (
+                            <Fragment key={node.id}>
+                                {lastYear !== year ? <Divider year={date.year()} /> : null}
+
+                                <ul className="item">
+                                    <li>
+                                        <a href={`/${node.slug}`} title={node.title}>
+                                            {node.title} <br/>
+                                            <span className="date">
+                                                {date.locale('pt').format('LL')}
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </Fragment>
+                        );
+
+                        lastYear = year;
+
+                        return post;
+                    })}
                 </section>
             </main>
         </Layout>

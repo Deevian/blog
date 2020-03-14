@@ -9,7 +9,16 @@ body {
     background-color: #fafafa;
 
     font-size: 17px;
-    color: #111111;
+}
+
+.index {
+    min-height: 100%;
+    max-width: 550px;
+}
+
+.post {
+    min-height: 100%;
+    max-width: 500px;
 }
 
 .nav {
@@ -33,25 +42,14 @@ body {
     cursor: pointer;
 }
 
-.index {
-    min-height: 100%;
-    max-width: 550px;
-}
-
 .title {
     display: inline-block;
 
     font-family: 'Playfair Display', serif;
     font-weight: normal;
     font-size: 3rem;
-}
 
-.title a {
-    color: #111;
-}
-
-.title a:hover {
-    color: #444;
+    color: #111111;
 }
 
 .item {
@@ -88,51 +86,55 @@ body {
 }
 
 .date {
-    display: inline;
-    font-size: .75rem;
-    color: #888;
+    display: block;
+    margin-top: -0.1rem;
+
+    font-size: .85rem;
+    color: #999;
 }
 
-.post {
-    min-height: 100%;
-    max-width: 500px;
-}
-
-.post p, .post blockquote, .post ul {
+.post-body {
     font-family: 'Georgia', serif;
     font-weight: normal;
-
     line-height: 24px;
-
-    text-indent: 1rem;
-    text-align: left;
-
     color: #333;
 }
 
-.post ul {
-    text-indent: 0;
-}
-
-.post li + li {
+.post-body li + li {
     margin-top: 1rem;
 }
 
-.post blockquote {
+.post-body blockquote {
     padding-left: 1rem;
     border-left: 1px solid #666;
 
-    text-indent: 0;
     font-style: italic;
     font-size: 0.9rem;
 }
 
-.post a {
+.post-body a {
     color: #333;
 }
 
-.paragraph a:hover {
+.post-body a:hover {
     color: #666;
+}
+
+.divider {
+    width: 25%;
+    font-size: 0.9rem;
+
+    color: #666;
+
+    margin: 2rem 0 1rem;
+}
+
+.divider hr {
+    border-top: 1px solid #ddd;
+}
+
+.divider:nth-of-type(1) {
+    margin-top: 1rem;
 }
 
 @media (min-width: 700px) {
@@ -154,11 +156,11 @@ body {
         width: 120%;
     }
 
-    .post p {
+    .post-body p {
         margin: 0 0 24px;
     }
 
-    .post blockquote {
+    .post-body blockquote {
         margin: 12px 0 32px;
     }
 }
@@ -184,11 +186,11 @@ body {
 
     }
 
-    .post p {
+    .post-body p {
         margin: 0 0 12px;
     }
 
-    .post blockquote {
+    .post-body blockquote {
         margin: 12px 0 20px;
     }
 }
