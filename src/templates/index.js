@@ -43,40 +43,38 @@ const Index = ({ data }) => {
                 <title>O Ponto Laranja</title>
             </Helmet>
 
-            <main className="index">
-                <nav className="nav">
-                    <img alt="O Ponto Laranja" src="/orange.png"/>
-                </nav>
+            <nav className="nav">
+                <img alt="O Ponto Laranja" src="/orange.png"/>
+            </nav>
 
-                <h1 className="title">O Ponto Laranja</h1>
-                <section>
-                    {posts.map(({ node }) => {
-                        const date = dayjs(node.published_at);
-                        const year = date.year();
+            <h1 className="title">O Ponto Laranja</h1>
+            <section>
+                {posts.map(({ node }) => {
+                    const date = dayjs(node.published_at);
+                    const year = date.year();
 
-                        const post = (
-                            <Fragment key={node.id}>
-                                {lastYear !== year ? <Divider year={date.year()} /> : null}
+                    const post = (
+                        <Fragment key={node.id}>
+                            {lastYear !== year ? <Divider year={date.year()} /> : null}
 
-                                <ul className="item">
-                                    <li>
-                                        <a href={`/${node.slug}`} title={node.title}>
-                                            {node.title} <br/>
-                                            <span className="date">
-                                                {date.locale('pt').format('LL')}
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </Fragment>
-                        );
+                            <ul className="item">
+                                <li>
+                                    <a href={`/${node.slug}`} title={node.title}>
+                                        {node.title} <br/>
+                                        <span className="date">
+                                            {date.locale('pt').format('LL')}
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </Fragment>
+                    );
 
-                        lastYear = year;
+                    lastYear = year;
 
-                        return post;
-                    })}
-                </section>
-            </main>
+                    return post;
+                })}
+            </section>
         </Layout>
     )
 };

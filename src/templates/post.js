@@ -36,16 +36,14 @@ const Post = ({ data }) => {
                 <meta property="og:title" content={post.title} />
             </Helmet>
 
-            <main className="post">
-                <nav className="nav active">
-                    <a href="/">
-                        <img alt="Índice" src="/orange.png"/>
-                    </a>
-                </nav>
+            <nav className="nav active">
+                <a href="/">
+                    <img alt="Índice" src="/orange.png"/>
+                </a>
+            </nav>
 
-                <h1 className="title">{post.title}</h1>
-                <section className="post-body" dangerouslySetInnerHTML={{ __html: post.html }}/>
-            </main>
+            <h1 className="title">{post.title}</h1>
+            <section className="post" dangerouslySetInnerHTML={{ __html: post.html }}/>
         </Layout>
 
     )

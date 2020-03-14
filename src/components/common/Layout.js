@@ -32,7 +32,9 @@ const DefaultLayout = ({ data, children }) => {
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
             </Helmet>
 
-            {children}
+            <main className="main">
+                {children}
+            </main>
         </Fragment>
     );
 };

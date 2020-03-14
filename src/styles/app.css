@@ -11,18 +11,13 @@ body {
     font-size: 17px;
 }
 
-.index {
-    min-height: 100%;
-    max-width: 550px;
-}
-
-.post {
+.main {
     min-height: 100%;
     max-width: 550px;
 }
 
 .nav {
-    right: 2rem;
+    left: 2rem;
     top: 2rem;
 }
 
@@ -94,18 +89,18 @@ body {
     color: #999;
 }
 
-.post-body {
+.post {
     font-family: 'Georgia', serif;
     font-weight: normal;
     line-height: 26px;
     color: #333;
 }
 
-.post-body li + li {
+.post li + li {
     margin-top: 1rem;
 }
 
-.post-body blockquote {
+.post blockquote {
     padding-left: 1rem;
     border-left: 1px solid #666;
 
@@ -115,11 +110,11 @@ body {
     line-height: 24px;
 }
 
-.post-body a {
+.post a {
     color: #333;
 }
 
-.post-body a:hover {
+.post a:hover {
     color: #666;
 }
 
@@ -142,44 +137,14 @@ body {
     margin-top: 1rem;
 }
 
-@media (min-width: 700px) {
-    .nav {
-        position: fixed;
-    }
-
-    .index {
-        padding: 0 2rem 20rem 5%;
-    }
-
-    .post {
-        padding: 0 2rem 20rem 5%;
-    }
-
-    .title {
-        margin-top: 4rem;
-        margin-bottom: 1.5rem;
-        width: 120%;
-    }
-
-    .post-body p {
-        margin: 0 0 24px;
-    }
-
-    .post-body blockquote {
-        margin: 12px 0 32px;
-    }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .nav {
         position: absolute;
+        right: 2rem;
+        left: auto;
     }
 
-    .index {
-        padding: 0 2rem 20rem;
-    }
-
-    .post {
+    .main {
         padding: 0 2rem 20rem;
     }
 
@@ -191,11 +156,69 @@ body {
 
     }
 
-    .post-body p {
+    .post p {
         margin: 0 0 12px;
     }
 
-    .post-body blockquote {
+    .post blockquote {
         margin: 12px 0 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav {
+        position: fixed;
+    }
+
+    .main {
+        padding-top: 0;
+        padding-right: 2rem;
+        padding-bottom: 20rem;
+
+        padding-left: 12%;
+    }
+
+    .title {
+        margin-top: 5rem;
+        margin-bottom: 1.5rem;
+        width: 120%;
+    }
+
+    .post p {
+        margin: 0 0 24px;
+    }
+
+    .post blockquote {
+        margin: 12px 0 32px;
+    }
+}
+
+@media (min-width: 834px) {
+    .main {
+        padding-left: 10%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        padding-left: 8%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .main {
+        padding-left: 6%;
+    }
+}
+
+@media (min-width: 2000px) {
+    .main {
+        padding-left: 5%;
+    }
+}
+
+@media (min-width: 2500px) {
+    .main {
+        padding-left: 4%;
     }
 }
