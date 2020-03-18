@@ -51,7 +51,7 @@ body {
 
 .item {
     font-size: 1rem;
-    font-family: 'Georgia', serif;
+    font-family: 'Times New Roman', serif;
     font-weight: normal;
 
     padding-left: 0.5rem;
@@ -92,7 +92,7 @@ body {
 }
 
 .post {
-    font-family: 'Georgia', serif;
+    font-family: 'Times New Roman', serif;
     font-weight: normal;
     line-height: 26px;
     color: #333;
@@ -121,7 +121,7 @@ body {
 }
 
 .divider {
-    font-family: 'Georgia', serif;
+    font-family: 'Times New Roman', serif;
     width: 25%;
     font-size: 0.9rem;
 
