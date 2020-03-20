@@ -27,7 +27,8 @@ const DefaultLayout = ({ data, children }) => {
                 <meta property="og:image" content="https://opontolaranja.pt/orange.png" />
                 <meta name="twitter:card" content="summary_large_image" />
 
-                <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=block" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=block" rel="stylesheet" />
 
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
             </Helmet>
