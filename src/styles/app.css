@@ -50,8 +50,8 @@ body {
 }
 
 .item {
-    font-size: 1rem;
-    font-family: 'Times New Roman', serif;
+    font-size: .9rem;
+    font-family: 'PT Serif', serif;
     font-weight: normal;
 
     padding-left: 0.5rem;
@@ -87,12 +87,13 @@ body {
     display: block;
     margin-top: -0.1rem;
 
-    font-size: .75rem;
+    font-size: .6rem;
     color: #999;
 }
 
 .post {
-    font-family: 'Times New Roman', serif;
+    font-family: 'PT Serif', serif;
+    font-size: 0.9rem;
     font-weight: normal;
     line-height: 26px;
     color: #333;
@@ -107,7 +108,7 @@ body {
     border-left: 1px solid #666;
 
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     line-height: 24px;
 }
@@ -121,9 +122,9 @@ body {
 }
 
 .divider {
-    font-family: 'Times New Roman', serif;
+    font-family: 'PT Serif', serif;
     width: 25%;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     color: #666;
 
