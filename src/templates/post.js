@@ -24,6 +24,14 @@ const propTypes = {
     }).isRequired
 };
 
+const ImageMeta = ({ image }) => (
+    <Helmet>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={image} />
+        <meta property="og:image" content={image} />
+    </Helmet>
+);
+
 const Post = ({ data }) => {
     const post = data.ghostPost;
 
@@ -35,6 +43,8 @@ const Post = ({ data }) => {
 
                 <meta property="og:title" content={post.title} />
             </Helmet>
+
+            {post.feature_image ? <ImageMeta image={post.feature_image} /> : null}
 
             <nav className="nav active">
                 <a href="/">
