@@ -54,7 +54,7 @@ const HeaderNav = styled.div`
     display: flex;
     justify-content: center;
 
-    margin: -.5rem 0 5rem;
+    margin: -.5rem 0 3rem;
 
     border-top: 1px solid #CCC;
     border-bottom: 1px solid #CCC;

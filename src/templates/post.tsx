@@ -30,6 +30,10 @@ export default ({ data }: Props) => (
         <Helmet>
             <title>{data.ghostPost.title}</title>
             <meta property="og:title" content={data.ghostPost.title} />
+
+            <script type='text/javascript'>
+                setTimeout(event => document.querySelectorAll('.post-header')[0].scrollIntoView(), 0)
+            </script>
         </Helmet>
 
         {data.ghostPost.feature_image ? <ImageMeta image={data.ghostPost.feature_image} /> : null}
