@@ -31,9 +31,12 @@ const PostContainer = styled.div`
     align-items: center;
 `
 
-const PostDivider = styled.hr`
+const PostDivider = styled.div`
+    height: 1px;
     width: 70%;
+
     margin: 10rem 0;
+    border-bottom: 1px solid #999;
  `
 
 export default ({ data }: Props) => (
