@@ -17,6 +17,8 @@ module.exports = {
                 trackingId: "UA-51942336-2",
             },
         },
-        { resolve: 'gatsby-matomo' }
+        { resolve: 'gatsby-matomo' },
+        { resolve: 'gatsby-plugin-emotion' },
+        { resolve: 'gatsby-plugin-typescript' }
     ],
 };

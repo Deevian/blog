@@ -1,5 +1,3 @@
-const path = require(`path`);
-
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -19,25 +17,18 @@ exports.createPages = async ({ graphql, actions }) => {
         throw new Error(result.errors)
     }
 
-    const posts = result.data.allGhostPost.edges;
-
-    const indexTemplate = path.resolve(`./src/templates/index.js`);
-    const postTemplate = path.resolve(`./src/templates/post.js`);
-
-    posts.forEach(({node}) => {
+    result.data.allGhostPost.edges.forEach(({node}) => {
         node.url = `/${node.slug}/`;
 
         createPage({
             path: node.url,
-            component: postTemplate,
+            component: require.resolve('./src/templates/post.tsx'),
             context: {
                 slug: node.slug,
             },
         })
     });
 
-    createPage({
-        path: '/',
-        component: indexTemplate
-    })
+    createPage({ path: '/', component: require.resolve('./src/templates/index.tsx') })
+    createPage({ path: '/indice', component: require.resolve('./src/templates/toc.tsx') })
 };

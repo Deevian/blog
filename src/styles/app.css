@@ -1,21 +1,7 @@
-html {
-    font-size: 18px;
-}
-
-body {
-    justify-content: left;
-
+html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
-
     margin: 0;
     padding: 0;
-
-    background-color: #fafafa;
-}
-
-.main {
-    min-height: 100%;
-    max-width: 550px;
 }
 
 .nav {
