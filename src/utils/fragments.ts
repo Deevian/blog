@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 
+// Used for single posts
 export const ghostPostFields = graphql`
     fragment GhostPostFields on GhostPost {
         # Main fields
@@ -91,6 +92,7 @@ export const ghostPostFields = graphql`
     }
 `;
 
+// Used for settings
 export const ghostSettingsFields = graphql`
     fragment GhostSettingsFields on GhostSettings {
         title
