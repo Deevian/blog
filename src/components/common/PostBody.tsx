@@ -15,6 +15,7 @@ const PostHeader = styled.div`
     align-items: center;
 
     margin: 0 0 3rem;
+    padding-top: 2rem;
 `
 
 const PostLink = styled.a`
@@ -82,7 +83,7 @@ const PostBody = styled.section`
 
 export default ({ title, html, published_at, slug, feature_image }: Props) => (
     <article>
-        <PostHeader>
+        <PostHeader className="post-header">
             {slug
                 ? <PostLink href={`/${slug}`}><PostTitle>{title}</PostTitle></PostLink>
                 : <PostTitle>{title}</PostTitle>}
