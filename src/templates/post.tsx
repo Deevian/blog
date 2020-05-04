@@ -9,6 +9,7 @@ interface Props {
         ghostPost: {
             title: string,
             html: string,
+            excerpt: string,
             published_at: string,
             feature_image?: string
         }
@@ -30,6 +31,8 @@ export default ({ data }: Props) => (
         <Helmet>
             <title>{data.ghostPost.title}</title>
             <meta property="og:title" content={data.ghostPost.title} />
+            <meta property="og:type" content="article" />
+            <meta property="og:description" content={data.ghostPost.excerpt} />
 
             <script type='text/javascript'>
                 setTimeout(event => document.querySelectorAll('.post-header')[0].scrollIntoView(), 0)
