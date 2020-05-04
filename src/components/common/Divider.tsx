@@ -6,20 +6,22 @@ interface Props {
 }
 
 const Divider = styled.div`
-    font-family: 'PT Serif', serif;
-    width: 25%;
+    text-align: left;
+
+    width: 100%;
     font-size: 0.8rem;
 
     color: #666;
 
     margin: 2rem 0 1rem;
+
+    border-bottom: 1px solid #AAA;
 `
 
 export default ({ year }: Props) => (
     <Fragment>
         <Divider>
             <span>{year}</span>
-            <hr/>
         </Divider>
     </Fragment>
 );
