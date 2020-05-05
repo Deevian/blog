@@ -4,7 +4,7 @@ import * as dayjs from "dayjs";
 interface Props {
     title: string
     html: string
-    published_at: string
+    published_at?: string
     slug?: string
     feature_image?: string
 }
@@ -15,7 +15,7 @@ const PostHeader = styled.div`
     align-items: center;
 
     margin: 0 0 3rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
 `
 
 const PostLink = styled.a`
@@ -88,7 +88,10 @@ export default ({ title, html, published_at, slug, feature_image }: Props) => (
                 ? <PostLink href={`/${slug}`}><PostTitle>{title}</PostTitle></PostLink>
                 : <PostTitle>{title}</PostTitle>}
 
-            <PostDate>{dayjs(published_at).format('LL')}</PostDate>
+            {published_at
+                ? <PostDate>{dayjs(published_at).format('LL')}</PostDate>
+                : null
+            }
 
             {feature_image ? (
                 <PostImage src={feature_image} alt={title} />

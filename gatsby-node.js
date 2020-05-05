@@ -29,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     });
 
-    createPage({ path: '/', component: require.resolve('./src/templates/index.tsx') })
-    createPage({ path: '/indice', component: require.resolve('./src/templates/toc.tsx') })
+    createPage({ path: '/', component: require.resolve('./src/pages/index.tsx') })
+    createPage({ path: '/indice', component: require.resolve('./src/pages/toc.tsx') })
+    createPage({ path: '/sobre', component: require.resolve('./src/pages/about.tsx') })
 };

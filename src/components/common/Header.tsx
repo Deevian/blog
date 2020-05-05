@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled from '@emotion/styled'
+import HeaderNav from "./HeaderNav";
 
 interface Props {
     isIndex?: boolean
@@ -50,33 +51,6 @@ const OrangeDotImage = styled.img`
     }
 `
 
-const HeaderNav = styled.div`
-    display: flex;
-    justify-content: center;
-
-    margin: -.5rem 0 3rem;
-
-    border-top: 1px solid #CCC;
-    border-bottom: 1px solid #CCC;
-
-    text-align: center;
-    width: 50%;
-`
-
-const NavLink = styled.a`
-    padding: 0 1rem;
-    line-height: 1.5rem;
-    font-size: 0.85rem;
-    color: #666;
-
-    text-decoration: none;
-
-    &:hover {
-        color: #111;
-        text-decoration: underline;
-    }
-`
-
 export default ({ isIndex = false }: Props) => (
     <Fragment>
         <Helmet>
@@ -91,10 +65,7 @@ export default ({ isIndex = false }: Props) => (
 
             <OrangeDotImage alt="O Ponto Laranja" src="/orange.png"/>
 
-            <HeaderNav>
-                <NavLink href="/">início</NavLink>
-                <NavLink href="/indice">índice</NavLink>
-            </HeaderNav>
+            <HeaderNav />
         </Header>
     </Fragment>
 )
