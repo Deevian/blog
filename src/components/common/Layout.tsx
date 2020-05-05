@@ -15,6 +15,7 @@ dayjs.locale('pt');
 import DefaultMeta from "./meta/DefaultMeta";
 
 interface Props {
+    showLogo?: boolean
     children: ReactNode
     data: {
         allGhostSettings: {
@@ -55,18 +56,27 @@ const Container = styled.main`
 
 const Section = styled.section`
     max-width: 600px;
-    margin: 5rem 8% 20rem;
+
+    margin-bottom: 20rem;
+    margin-right: 8%;
+    margin-left: 8%;
+
+
+    ${({ showLogo }: { showLogo: boolean }) => showLogo
+        ? 'margin-top: 5rem;'
+        : 'margin-top: 2rem;'
+    }
 
     @media (max-width: 600px) {
-        margin: 2.5rem 8% 20rem;
+        margin-top: 2rem;
     }
 `
 
-const Layout = ({ data, children }: Props) => (
+const Layout = ({ showLogo = true, data, children }: Props) => (
     <Container>
         <DefaultMeta customStyles={data.allGhostSettings.edges[0].node.codeinjection_styles} />
 
-        <Section>
+        <Section showLogo={showLogo}>
             {children}
         </Section>
     </Container>

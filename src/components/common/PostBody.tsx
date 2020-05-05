@@ -69,7 +69,7 @@ const PostBody = styled.section`
     
         line-height: 24px;
 
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     a {
