@@ -22,7 +22,7 @@ interface Props {
 }
 
 const IndexContainer = styled.section`
-    margin-top: -2rem;
+    margin-top: 4rem;
 `
 
 const List = styled.ul`
