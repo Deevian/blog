@@ -64,18 +64,16 @@ const ItemDate = styled.span`
 export default ({ data }: Props) => {
     let lastYear;
 
-    const posts = data.allGhostPost.edges;
-
     return (
         <Layout>
-            <Header />
-
             <Helmet>
                 <title>Índice</title>
             </Helmet>
 
+            <Header />
+
             <IndexContainer>
-                {posts.map(({ node }) => {
+                {data.allGhostPost.edges.map(({ node }) => {
                     const date = dayjs(node.published_at);
                     const year = date.year();
 
