@@ -15,16 +15,13 @@ export default () => (
                 title={'Sobre Mim'}
                 html={`
                     <p style="margin-top: -1rem">
-                        Olá. O meu nome é João. E eu sou... eu. Pessoa de meia-tijela que não sabe nada
+                        Olá. O meu nome é João. E eu sou... eu. Uma talvez-pessoa que sabe muito pouco
                         sobre nada, e que volta e meia se perde nas coisas estranhas que populam este ponto
-                        laranja. Autor prolífero de blogs defuntos, ando agora à procura das deambulações
-                        cansadas de uma sombra demente que fugiu sem que eu desse por ela.
+                        laranja. Autor prolífero de blogs defuntos, anda agora à procura das deambulações
+                        cansadas de uma sombra demente que fugiu sem que desse por ela.
                     </p>
                     <p>
-                        Não sei. Não sei.
-                    </p>
-                    <p>
-                        Bah.
+                        Coisas. Não sei bem. Tentativa de saber, entretanto.
                     </p>
                 `}
             />
