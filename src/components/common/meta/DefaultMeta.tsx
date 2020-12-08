@@ -13,6 +13,7 @@ export default ({ customStyles }: Props) => (
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <meta property="og:site_name" content="O Ponto Laranja" />
         <meta property="og:title" content="O Ponto Laranja" />
+        <meta property="fb:app_id" content="699908233987484" />
         <meta property="og:image" content="https://opontolaranja.pt/orange.png" />
         <meta property="og:description" content="As deambulações cansadas de uma sombra demente" />
         <meta name="twitter:card" content="summary_large_image" />

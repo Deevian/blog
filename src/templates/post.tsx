@@ -30,7 +30,7 @@ function truncate(str, n){
     }
 
     const subString = str.substr(0, n - 4);
-    return subString.substr(0, subString.lastIndexOf(" "))
+    return `${subString.substr(0, subString.lastIndexOf(" "))}...`;
 }
 
 export default ({ data }: Props) => (
