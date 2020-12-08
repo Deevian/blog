@@ -8,6 +8,7 @@ interface Props {
     data: {
         ghostPost: {
             title: string,
+            url: string,
             html: string,
             excerpt: string,
             published_at: string,
@@ -40,6 +41,7 @@ export default ({ data }: Props) => (
         <Helmet>
             <title>{data.ghostPost.title}</title>
             <meta property="og:title" content={data.ghostPost.title} />
+            <meta property="og:url" content={data.ghostPost.url} />
             <meta property="og:type" content="article" />
             <meta property="og:description" content={truncate(data.ghostPost.excerpt, 200)} />
         </Helmet>
