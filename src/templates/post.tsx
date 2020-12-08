@@ -24,6 +24,15 @@ const ImageMeta = ({ image }) => (
     </Helmet>
 );
 
+function truncate(str, n){
+    if (str.length <= n) {
+        return str;
+    }
+
+    const subString = str.substr(0, n - 4);
+    return subString.substr(0, subString.lastIndexOf(" "))
+}
+
 export default ({ data }: Props) => (
     <Layout showLogo={false}>
         <Header showLogo={false} />
@@ -32,7 +41,7 @@ export default ({ data }: Props) => (
             <title>{data.ghostPost.title}</title>
             <meta property="og:title" content={data.ghostPost.title} />
             <meta property="og:type" content="article" />
-            <meta property="og:description" content={data.ghostPost.excerpt} />
+            <meta property="og:description" content={truncate(data.ghostPost.excerpt, 200)} />
         </Helmet>
 
         {data.ghostPost.feature_image ? <ImageMeta image={data.ghostPost.feature_image} /> : null}
