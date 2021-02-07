@@ -57,7 +57,7 @@ export default ({ isIndex = false, showLogo = true }: Props) => (
         {showLogo ? (
             <Fragment>
                 {!isIndex
-                    ? <link css={headerLinkStyles} href="/"><h1 css={headerTitleStyles}>O Ponto Laranja</h1></link>
+                    ? <a css={headerLinkStyles} href="/"><h1 css={headerTitleStyles}>O Ponto Laranja</h1></a>
                     : <h1 css={headerTitleStyles}>O Ponto Laranja</h1>
                 }
 
