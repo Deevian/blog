@@ -17,20 +17,20 @@
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
-    "babel-preset-gatsby": "0.12.1",
     "eslint": "7.19.0",
     "eslint-plugin-ghost": "2.0.0",
     "eslint-plugin-react": "7.22.0"
   },
   "dependencies": {
-    "@compiled/babel-plugin": "^0.6.1",
-    "@compiled/react": "^0.6.1",
+    "@emotion/styled": "11.1.5",
+    "@emotion/react": "^11.1.5",
     "@tryghost/helpers": "1.1.37",
     "@tryghost/helpers-gatsby": "1.0.42",
     "cheerio": "1.0.0-rc.5",
     "dayjs": "1.10.4",
     "gatsby": "2.32.3",
     "gatsby-image": "2.11.0",
+    "gatsby-plugin-emotion": "5.4.0",
     "gatsby-plugin-google-analytics": "2.11.0",
     "gatsby-plugin-no-javascript": "2.0.5",
     "gatsby-plugin-react-helmet": "3.10.0",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled } from '@compiled/react';
+import styled from '@emotion/styled'
 import * as dayjs from 'dayjs';
 
 interface Props {
@@ -31,7 +31,7 @@ const PostLink = styled.a`
 const PostTitle = styled.h3`
     text-align: center;
 
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 1.9rem;
     font-weight: normal;
     color: #111;
