@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { styled } from '@compiled/react';
+import styled from '@emotion/styled'
 
 import { Layout, Header } from '../components/common';
 import PostBody from "../components/common/PostBody";

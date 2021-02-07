@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { styled } from '@compiled/react';
+import styled from '@emotion/styled'
 import * as dayjs from 'dayjs';
 
 import { Layout, Divider, Header } from '../components/common';
@@ -30,7 +30,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-    font-family: 'PT Serif', serif;
+    font-family: "PT Serif", serif;
     font-weight: normal;
 
     line-height: 1.2rem;

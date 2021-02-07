@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { styled } from '@compiled/react';
+import styled from '@emotion/styled'
 
 import '../../styles/app.css';
 
@@ -50,7 +50,7 @@ const Container = styled.main`
 
     background-color: #fafafa;
 
-    font-family: 'PT Serif', serif;
+    font-family: "PT Serif", serif;
     font-size: 16px;
 `
 

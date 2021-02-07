@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { styled } from '@compiled/react';
+import styled from '@emotion/styled'
 import HeaderNav from './HeaderNav';
 
 interface Props {
@@ -28,7 +28,7 @@ const HeaderTitle = styled.h1`
     text-align: center;
     color: #111;
 
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 3.5rem;
     font-weight: normal;
 
