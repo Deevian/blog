@@ -1,10 +1,7 @@
-import { Fragment } from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet'
-import styled from '@emotion/styled';
-import * as dayjs from 'dayjs';
+import { styled } from '@compiled/react';
 
-import { Layout, Divider, Header } from '../components/common';
+import { Layout, Header } from '../components/common';
 import PostBody from "../components/common/PostBody";
 
 interface Props {
@@ -45,7 +42,7 @@ export default ({ data }: Props) => (
 
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
-                <PostContainer>
+                <PostContainer key={index}>
                     {index !== 0 ? <PostDivider /> : null}
 
                     <PostBody

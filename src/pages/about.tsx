@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Helmet from 'react-helmet'
 import { Layout, Header } from '../components/common';
 import PostBody from "../components/common/PostBody";

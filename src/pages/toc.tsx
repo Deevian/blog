@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import styled from '@emotion/styled';
+import { styled } from '@compiled/react';
 import * as dayjs from 'dayjs';
 
 import { Layout, Divider, Header } from '../components/common';

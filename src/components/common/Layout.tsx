@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled  from '@emotion/styled'
+import { styled } from '@compiled/react';
 
 import '../../styles/app.css';
 
@@ -57,30 +57,42 @@ const Container = styled.main`
 const Section = styled.section`
     max-width: 600px;
 
+    margin-top: 5rem;
     margin-bottom: 20rem;
     margin-right: 8%;
     margin-left: 8%;
-
-
-    ${({ showLogo }: { showLogo: boolean }) => showLogo
-        ? 'margin-top: 5rem;'
-        : 'margin-top: 2rem;'
-    }
 
     @media (max-width: 600px) {
         margin-top: 2rem;
     }
 `
 
-const Layout = ({ showLogo = true, data, children }: Props) => (
-    <Container>
-        <DefaultMeta customStyles={data.allGhostSettings.edges[0].node.codeinjection_styles} />
+const LogolessSection = styled.section`
+    max-width: 600px;
 
-        <Section showLogo={showLogo}>
-            {children}
-        </Section>
-    </Container>
-);
+    margin-top: 2rem;
+    margin-bottom: 20rem;
+    margin-right: 8%;
+    margin-left: 8%;
+
+    @media (max-width: 600px) {
+        margin-top: 2rem;
+    }
+`
+
+const Layout = ({ showLogo = true, data, children }: Props) => {
+    const SectionComponent = showLogo ? Section : LogolessSection;
+
+    return (
+        <Container>
+            <DefaultMeta customStyles={data.allGhostSettings.edges[0].node.codeinjection_styles} />
+
+            <SectionComponent>
+                {children}
+            </SectionComponent>
+        </Container>
+    )
+}
 
 export default (props) => (
     <StaticQuery query={settingsQuery} render={data => <Layout data={data} {...props} />} />

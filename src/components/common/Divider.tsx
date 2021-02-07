@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import styled from "@emotion/styled";
+import { Fragment } from 'react';
+import { styled } from '@compiled/react';
 
 interface Props {
     year: number
