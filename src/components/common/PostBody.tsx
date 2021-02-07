@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import { css } from '@linaria/core';
 import * as React from 'react';
 import * as dayjs from 'dayjs';
 
@@ -85,22 +84,22 @@ const postBodyStyles = css`
 
 export default ({ title, html, published_at, slug, feature_image }: Props) => (
     <article>
-        <div css={postHeaderStyles} className="post-header">
+        <div className={postHeaderStyles}>
             {slug
-                ? <a css={postLinkStyles} href={`/${slug}`}><h3 css={postTitleStyles}>{title}</h3></a>
-                : <h3 css={postTitleStyles}>{title}</h3>}
+                ? <a className={postLinkStyles} href={`/${slug}`}><h3 className={postTitleStyles}>{title}</h3></a>
+                : <h3 className={postTitleStyles}>{title}</h3>}
 
             {published_at
-                ? <abbr css={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
+                ? <abbr className={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
                 : null
             }
 
             {feature_image ? (
-                <img css={postImageStyles} src={feature_image} alt={title} />
+                <img className={postImageStyles} src={feature_image} alt={title} />
             ): null}
         </div>
 
-        <section css={postBodyStyles} dangerouslySetInnerHTML={{ __html: html }} />
+        <section className={postBodyStyles} dangerouslySetInnerHTML={{ __html: html }} />
     </article>
 )
 

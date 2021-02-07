@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import { css } from '@linaria/core';
+import * as React from 'react';
 import { graphql } from 'gatsby';
 
 import { Layout, Header } from '../components/common';
@@ -43,8 +43,8 @@ export default ({ data }: Props) => (
 
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
-                <div css={postContainerStyles} key={index}>
-                    {index !== 0 ? <div css={postDividerStyles} /> : null}
+                <div className={postContainerStyles} key={index}>
+                    {index !== 0 ? <div className={postDividerStyles} /> : null}
 
                     <PostBody
                         title={node.title}

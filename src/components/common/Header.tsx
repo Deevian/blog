@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
-import { Fragment } from 'react';
+import { css } from '@linaria/core';
+import * as React from 'react';
 import HeaderNav from './HeaderNav';
 
 interface Props {
@@ -53,16 +52,16 @@ const orangeDotStyles = css`
 `
 
 export default ({ isIndex = false, showLogo = true }: Props) => (
-    <header css={headerStyles}>
+    <header className={headerStyles}>
         {showLogo ? (
-            <Fragment>
+            <React.Fragment>
                 {!isIndex
-                    ? <a css={headerLinkStyles} href="/"><h1 css={headerTitleStyles}>O Ponto Laranja</h1></a>
-                    : <h1 css={headerTitleStyles}>O Ponto Laranja</h1>
+                    ? <a className={headerLinkStyles} href="/"><h1 className={headerTitleStyles}>O Ponto Laranja</h1></a>
+                    : <h1 className={headerTitleStyles}>O Ponto Laranja</h1>
                 }
 
-                <img css={orangeDotStyles} alt="O Ponto Laranja" src="/orange.png"/>
-            </ Fragment>
+                <img className={orangeDotStyles} alt="O Ponto Laranja" src="/orange.png"/>
+            </ React.Fragment>
         ) : null}
 
         <HeaderNav />

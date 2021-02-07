@@ -1,5 +1,7 @@
 # Node template
 
+.linaria-cache
+
 # Logs
 logs
 *.log

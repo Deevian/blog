@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import { css } from '@linaria/core';
 import * as React from 'react';
 
 const headerNavStyles = css`
@@ -30,9 +29,9 @@ const navLinkStyles = css`
 
 
 export default () => (
-    <div css={headerNavStyles}>
-        <a css={navLinkStyles} href="/">início</a>
-        <a css={navLinkStyles} href="/indice">índice</a>
-        <a css={navLinkStyles} href="/sobre">sobre</a>
+    <div className={headerNavStyles}>
+        <a className={navLinkStyles} href="/">início</a>
+        <a className={navLinkStyles} href="/indice">índice</a>
+        <a className={navLinkStyles} href="/sobre">sobre</a>
     </div>
 )

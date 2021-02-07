@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
-import { ReactNode } from 'react';
+import { css } from '@linaria/core';
+import * as React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import '../../styles/app.css';
@@ -17,7 +16,7 @@ import DefaultMeta from "./meta/DefaultMeta";
 
 interface Props {
     showLogo?: boolean
-    children: ReactNode
+    children: React.ReactNode
     data: {
         allGhostSettings: {
             edges: Array<{
@@ -85,10 +84,10 @@ const Layout = ({ showLogo = true, data, children }: Props) => {
     const sectionStyles = showLogo ? logoSectionStyles : logolessSection;
 
     return (
-        <main css={containerStyles}>
+        <main className={containerStyles}>
             <DefaultMeta customStyles={data.allGhostSettings.edges[0].node.codeinjection_styles} />
 
-            <section css={sectionStyles}>
+            <section className={sectionStyles}>
                 {children}
             </section>
         </main>
