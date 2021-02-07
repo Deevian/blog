@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Helmet from 'react-helmet';
 
 interface Props {
@@ -18,8 +19,16 @@ export default ({ customStyles }: Props) => (
         <meta property="og:description" content="As deambulações cansadas de uma sombra demente" />
         <meta name="twitter:card" content="summary_large_image" />
 
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=block" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=block" rel="stylesheet" />
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
+              href="https://fonts.gstatic.com/s/ptserif/v12/EJRTQgYoZZY2vCFuvAFT_r21cg.woff2"/>
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
+              href="https://fonts.gstatic.com/s/ptserif/v12/EJRQQgYoZZY2vCFuvAFT9gaQZynfoA.woff2"/>
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
+              href="https://fonts.gstatic.com/s/ptserif/v12/EJRVQgYoZZY2vCFuvAFWzr8.woff2"/>
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
+              href="https://fonts.gstatic.com/s/ptserif/v12/EJRSQgYoZZY2vCFuvAnt66qSVys.woff2"/>
+        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
+              href="https://fonts.gstatic.com/s/playfairdisplay/v22/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2"/>
 
         {customStyles ? <style type="text/css">{customStyles}</style> : null}
     </Helmet>

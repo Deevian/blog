@@ -1,6 +1,6 @@
-import { Fragment } from 'react'
-import styled from '@emotion/styled'
-import HeaderNav from "./HeaderNav";
+import { Fragment } from 'react';
+import { styled } from '@compiled/react';
+import HeaderNav from './HeaderNav';
 
 interface Props {
     isIndex?: boolean

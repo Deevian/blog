@@ -1,5 +1,6 @@
-import styled from "@emotion/styled";
-import * as dayjs from "dayjs";
+import * as React from 'react';
+import { styled } from '@compiled/react';
+import * as dayjs from 'dayjs';
 
 interface Props {
     title: string

@@ -18,7 +18,7 @@ module.exports = {
             },
         },
         { resolve: 'gatsby-matomo' },
-        { resolve: 'gatsby-plugin-emotion' },
-        { resolve: 'gatsby-plugin-typescript' }
+        { resolve: 'gatsby-plugin-typescript' },
+        'gatsby-plugin-no-javascript'
     ],
 };

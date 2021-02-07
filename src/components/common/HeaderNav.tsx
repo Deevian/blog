@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import * as React from 'react';
+import { styled } from '@compiled/react';
 
 const HeaderNav = styled.div`
     display: flex;
