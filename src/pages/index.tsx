@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled'
 
 import { Layout, Header } from '../components/common';
 import PostBody from "../components/common/PostBody";
@@ -21,14 +22,14 @@ interface Props {
     }
 }
 
-const PostContainer = styled.div`
+const postContainerStyles = css`
     display: flex;
     flex-direction: column;
 
     align-items: center;
 `
 
-const PostDivider = styled.div`
+const postDividerStyles = css`
     height: 1px;
     width: 70%;
 
@@ -42,8 +43,8 @@ export default ({ data }: Props) => (
 
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
-                <PostContainer key={index}>
-                    {index !== 0 ? <PostDivider /> : null}
+                <div css={postContainerStyles} key={index}>
+                    {index !== 0 ? <div css={postDividerStyles} /> : null}
 
                     <PostBody
                         title={node.title}
@@ -52,7 +53,7 @@ export default ({ data }: Props) => (
                         published_at={node.published_at}
                         feature_image={node.feature_image}
                     />
-                </PostContainer>
+                </div>
             ))}
         </section>
     </Layout>

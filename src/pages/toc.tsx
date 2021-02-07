@@ -1,7 +1,8 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import styled from '@emotion/styled'
 import * as dayjs from 'dayjs';
 
 import { Layout, Divider, Header } from '../components/common';
@@ -21,15 +22,15 @@ interface Props {
     }
 }
 
-const IndexContainer = styled.section`
+const indexContainerStyles = css`
     margin-top: 4rem;
 `
 
-const List = styled.ul`
+const listStyles = css`
     padding-left: 1.5rem;
 `
 
-const ListItem = styled.li`
+const listItemStyles = css`
     font-family: "PT Serif", serif;
     font-weight: normal;
 
@@ -43,7 +44,7 @@ const ListItem = styled.li`
 
 `
 
-const ItemLink = styled.a`
+const itemLinkStyles = css`
     color: #333;
     text-decoration: none;
 
@@ -53,7 +54,7 @@ const ItemLink = styled.a`
     }
 `
 
-const ItemDate = styled.span`
+const itemDateStyles = css`
     display: block;
     margin-top: -0.1rem;
     
@@ -72,7 +73,7 @@ export default ({ data }: Props) => {
 
             <Header />
 
-            <IndexContainer>
+            <main css={indexContainerStyles}>
                 {data.allGhostPost.edges.map(({ node }) => {
                     const date = dayjs(node.published_at);
                     const year = date.year();
@@ -81,16 +82,16 @@ export default ({ data }: Props) => {
                         <Fragment key={node.id}>
                             {lastYear !== year ? <Divider year={date.year()} /> : null}
 
-                            <List>
-                                <ListItem>
-                                    <ItemLink href={`/${node.slug}`} title={node.title}>
+                            <ul css={listStyles}>
+                                <li css={listItemStyles}>
+                                    <a css={itemLinkStyles} href={`/${node.slug}`} title={node.title}>
                                         {node.title} <br/>
-                                        <ItemDate>
+                                        <span css={itemDateStyles}>
                                             {date.format('LL')}
-                                        </ItemDate>
-                                    </ItemLink>
-                                </ListItem>
-                            </List>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
                         </Fragment>
                     );
 
@@ -98,7 +99,7 @@ export default ({ data }: Props) => {
 
                     return post;
                 })}
-            </IndexContainer>
+            </main>
         </Layout>
     )
 };

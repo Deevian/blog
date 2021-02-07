@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import { Fragment } from 'react';
-import styled from '@emotion/styled'
 import HeaderNav from './HeaderNav';
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
     showLogo?: boolean
 }
 
-const Header = styled.header`
+const headerStyles = css`
     position: relative;
 
     display: flex;
@@ -15,7 +16,7 @@ const Header = styled.header`
     align-items: center;
 `
 
-const HeaderLink = styled.a`
+const headerLinkStyles = css`
     color: #111;
     text-decoration: none;
 
@@ -24,7 +25,7 @@ const HeaderLink = styled.a`
     }
 `
 
-const HeaderTitle = styled.h1`
+const headerTitleStyles = css`
     text-align: center;
     color: #111;
 
@@ -35,7 +36,7 @@ const HeaderTitle = styled.h1`
     margin: 0;
 `
 
-const OrangeDotImage = styled.img`
+const orangeDotStyles = css`
     position: relative;
 
     width: 15px;
@@ -52,18 +53,18 @@ const OrangeDotImage = styled.img`
 `
 
 export default ({ isIndex = false, showLogo = true }: Props) => (
-    <Header>
+    <header css={headerStyles}>
         {showLogo ? (
             <Fragment>
                 {!isIndex
-                    ? <HeaderLink href="/"><HeaderTitle>O Ponto Laranja</HeaderTitle></HeaderLink>
-                    : <HeaderTitle>O Ponto Laranja</HeaderTitle>
+                    ? <link css={headerLinkStyles} href="/"><h1 css={headerTitleStyles}>O Ponto Laranja</h1></link>
+                    : <h1 css={headerTitleStyles}>O Ponto Laranja</h1>
                 }
 
-                <OrangeDotImage alt="O Ponto Laranja" src="/orange.png"/>
+                <img css={orangeDotStyles} alt="O Ponto Laranja" src="/orange.png"/>
             </ Fragment>
         ) : null}
 
         <HeaderNav />
-    </Header>
+    </header>
 )

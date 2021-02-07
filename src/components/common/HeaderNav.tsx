@@ -1,7 +1,8 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import * as React from 'react';
-import styled from '@emotion/styled'
 
-const HeaderNav = styled.div`
+const headerNavStyles = css`
     display: flex;
     justify-content: center;
 
@@ -13,7 +14,7 @@ const HeaderNav = styled.div`
     margin-top: -0.5rem;
 `
 
-const NavLink = styled.a`
+const navLinkStyles = css`
     padding: 0 1rem;
     line-height: 1.5rem;
     font-size: 0.85rem;
@@ -29,9 +30,9 @@ const NavLink = styled.a`
 
 
 export default () => (
-    <HeaderNav>
-        <NavLink href="/">início</NavLink>
-        <NavLink href="/indice">índice</NavLink>
-        <NavLink href="/sobre">sobre</NavLink>
-    </HeaderNav>
+    <div css={headerNavStyles}>
+        <a css={navLinkStyles} href="/">início</a>
+        <a css={navLinkStyles} href="/indice">índice</a>
+        <a css={navLinkStyles} href="/sobre">sobre</a>
+    </div>
 )

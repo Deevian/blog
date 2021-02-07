@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import { ReactNode } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled'
 
 import '../../styles/app.css';
 
@@ -40,7 +41,7 @@ export const settingsQuery = graphql`
     }
 `;
 
-const Container = styled.main`
+const containerStyles = css`
     display: flex;
     justify-content: center;
 
@@ -54,7 +55,7 @@ const Container = styled.main`
     font-size: 16px;
 `
 
-const Section = styled.section`
+const logoSectionStyles = css`
     max-width: 600px;
 
     margin-top: 5rem;
@@ -67,7 +68,7 @@ const Section = styled.section`
     }
 `
 
-const LogolessSection = styled.section`
+const logolessSection = css`
     max-width: 600px;
 
     margin-top: 2rem;
@@ -81,16 +82,16 @@ const LogolessSection = styled.section`
 `
 
 const Layout = ({ showLogo = true, data, children }: Props) => {
-    const SectionComponent = showLogo ? Section : LogolessSection;
+    const sectionStyles = showLogo ? logoSectionStyles : logolessSection;
 
     return (
-        <Container>
+        <main css={containerStyles}>
             <DefaultMeta customStyles={data.allGhostSettings.edges[0].node.codeinjection_styles} />
 
-            <SectionComponent>
+            <section css={sectionStyles}>
                 {children}
-            </SectionComponent>
-        </Container>
+            </section>
+        </main>
     )
 }
 
