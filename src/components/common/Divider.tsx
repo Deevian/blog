@@ -1,11 +1,12 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import { Fragment } from 'react';
-import styled from '@emotion/styled'
 
 interface Props {
     year: number
 }
 
-const Divider = styled.div`
+const dividerStyles = css`
     text-align: left;
 
     width: 100%;
@@ -20,8 +21,8 @@ const Divider = styled.div`
 
 export default ({ year }: Props) => (
     <Fragment>
-        <Divider>
+        <div css={dividerStyles}>
             <span>{year}</span>
-        </Divider>
+        </div>
     </Fragment>
 );

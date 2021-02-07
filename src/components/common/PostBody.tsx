@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
 import * as React from 'react';
-import styled from '@emotion/styled'
 import * as dayjs from 'dayjs';
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
     feature_image?: string
 }
 
-const PostHeader = styled.div`
+const postHeaderStyles = css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,7 @@ const PostHeader = styled.div`
     padding-top: 4rem;
 `
 
-const PostLink = styled.a`
+const postLinkStyles = css`
     text-decoration: none;
     color: #111;
 
@@ -28,7 +29,7 @@ const PostLink = styled.a`
     }
 `
 
-const PostTitle = styled.h3`
+const postTitleStyles = css`
     text-align: center;
 
     font-family: "Playfair Display", serif;
@@ -39,20 +40,20 @@ const PostTitle = styled.h3`
     margin: 0;
 `
 
-const PostDate = styled.abbr`
+const postDateStyles = css`
     font-size: 0.75rem;
     color: #555;
 
     margin-top: 0.5rem;
 `
 
-const PostImage = styled.img`
+const postImageStyles = css`
     width: 120%;
 
     margin: 1.5rem 0 0;
 `
 
-const PostBody = styled.section`
+const postBodyStyles = css`
     font-weight: normal;
     line-height: 26px;
     color: #333;
@@ -84,22 +85,22 @@ const PostBody = styled.section`
 
 export default ({ title, html, published_at, slug, feature_image }: Props) => (
     <article>
-        <PostHeader className="post-header">
+        <div css={postHeaderStyles} className="post-header">
             {slug
-                ? <PostLink href={`/${slug}`}><PostTitle>{title}</PostTitle></PostLink>
-                : <PostTitle>{title}</PostTitle>}
+                ? <a css={postLinkStyles} href={`/${slug}`}><h3 css={postTitleStyles}>{title}</h3></a>
+                : <h3 css={postTitleStyles}>{title}</h3>}
 
             {published_at
-                ? <PostDate>{dayjs(published_at).format('LL')}</PostDate>
+                ? <abbr css={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
                 : null
             }
 
             {feature_image ? (
-                <PostImage src={feature_image} alt={title} />
+                <img css={postImageStyles} src={feature_image} alt={title} />
             ): null}
-        </PostHeader>
+        </div>
 
-        <PostBody dangerouslySetInnerHTML={{ __html: html }} />
+        <section css={postBodyStyles} dangerouslySetInnerHTML={{ __html: html }} />
     </article>
 )
 
