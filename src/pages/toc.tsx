@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import { css } from '@linaria/core';
+import * as React from 'react';
 import { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
@@ -73,7 +73,7 @@ export default ({ data }: Props) => {
 
             <Header />
 
-            <main css={indexContainerStyles}>
+            <main className={indexContainerStyles}>
                 {data.allGhostPost.edges.map(({ node }) => {
                     const date = dayjs(node.published_at);
                     const year = date.year();
@@ -82,11 +82,11 @@ export default ({ data }: Props) => {
                         <Fragment key={node.id}>
                             {lastYear !== year ? <Divider year={date.year()} /> : null}
 
-                            <ul css={listStyles}>
-                                <li css={listItemStyles}>
-                                    <a css={itemLinkStyles} href={`/${node.slug}`} title={node.title}>
+                            <ul className={listStyles}>
+                                <li className={listItemStyles}>
+                                    <a className={itemLinkStyles} href={`/${node.slug}`} title={node.title}>
                                         {node.title} <br/>
-                                        <span css={itemDateStyles}>
+                                        <span className={itemDateStyles}>
                                             {date.format('LL')}
                                         </span>
                                     </a>

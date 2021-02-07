@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
-import { Fragment } from 'react';
+import { css } from '@linaria/core';
+import * as React from 'react';
 
 interface Props {
     year: number
@@ -20,9 +19,9 @@ const dividerStyles = css`
 `
 
 export default ({ year }: Props) => (
-    <Fragment>
-        <div css={dividerStyles}>
+    <React.Fragment>
+        <div className={dividerStyles}>
             <span>{year}</span>
         </div>
-    </Fragment>
+    </React.Fragment>
 );
