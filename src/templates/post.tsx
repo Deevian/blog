@@ -27,7 +27,7 @@ const ImageMeta = ({ image }) => (
 );
 
 function truncate(str, n){
-    if (str.length <= n) {
+    if (!str || str.length <= n) {
         return str;
     }
 
