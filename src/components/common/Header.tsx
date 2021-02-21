@@ -60,7 +60,7 @@ export default ({ isIndex = false, showLogo = true }: Props) => (
                     : <h1 className={headerTitleStyles}>O Ponto Laranja</h1>
                 }
 
-                <img className={orangeDotStyles} alt="O Ponto Laranja" src="/orange.png"/>
+                <img width="15" height="15" className={orangeDotStyles} alt="O Ponto Laranja" src="/orange.png"/>
             </ React.Fragment>
         ) : null}
 
