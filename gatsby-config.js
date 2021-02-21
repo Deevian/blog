@@ -11,12 +11,6 @@ module.exports = {
             options: ghostConfig
         },
         `gatsby-plugin-react-helmet`,
-        {
-            resolve: `gatsby-plugin-google-gtag`,
-            options: {
-              trackingIds: ['UA-51942336-2']
-            },
-        },
         { resolve: 'gatsby-matomo' },
         { resolve: 'gatsby-plugin-typescript' },
         { resolve: 'gatsby-plugin-linaria' },
