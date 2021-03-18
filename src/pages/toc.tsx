@@ -31,7 +31,7 @@ const listStyles = css`
 `
 
 const listItemStyles = css`
-    font-family: "Didot", serif;
+    font-family: serif;
     font-weight: normal;
 
     line-height: 1.2rem;
