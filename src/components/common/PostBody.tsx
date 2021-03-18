@@ -21,7 +21,6 @@ const postLinkStyles = css`
 
     text-align: center;
 
-    font-family: "Playfair Display", serif;
     font-size: 1.9rem;
     font-weight: normal;
 
