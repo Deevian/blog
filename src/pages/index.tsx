@@ -23,19 +23,22 @@ interface Props {
 }
 
 const postContainerStyles = css`
+    &:not(:first-child):before {
+        content: '';
+        display: block;
+
+        height: 1px;
+        width: 70%;
+    
+        margin: 10rem 0 6rem;
+        border-bottom: 1px solid #999;
+    }
+
     display: flex;
     flex-direction: column;
 
     align-items: center;
 `
-
-const postDividerStyles = css`
-    height: 1px;
-    width: 70%;
-
-    margin: 10rem 0 6rem;
-    border-bottom: 1px solid #999;
- `
 
 export default ({ data }: Props) => (
     <Layout>
@@ -43,9 +46,7 @@ export default ({ data }: Props) => (
 
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
-                <article className={postContainerStyles} key={index}>
-                    {index !== 0 ? <div className={postDividerStyles} /> : null}
-
+                <article key={index} className={postContainerStyles}>
                     <PostBody
                         title={node.title}
                         slug={node.slug}
