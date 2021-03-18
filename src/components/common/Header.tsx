@@ -29,7 +29,7 @@ const headerTitleStyles = css`
     color: #111;
 
     font-family: "Playfair Display", serif;
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     font-weight: normal;
 
     margin: 0;
