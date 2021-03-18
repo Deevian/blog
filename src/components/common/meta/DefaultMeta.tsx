@@ -20,15 +20,14 @@ export default ({ customStyles }: Props) => (
         <meta name="twitter:card" content="summary_large_image" />
 
         <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
-              href="https://assets.opontolaranja.pt/EJRTQgYoZZY2vCFuvAFT_r21cg.woff2"/>
+              href="https://assets.opontolaranja.pt/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2"/>
         <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
-              href="https://assets.opontolaranja.pt/EJRQQgYoZZY2vCFuvAFT9gaQZynfoA.woff2"/>
+              href="https://assets.opontolaranja.pt/EJRTQgYoZZY2vCFuvAFT_r21cg.woff2"/>
         <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
               href="https://assets.opontolaranja.pt/EJRVQgYoZZY2vCFuvAFWzr8.woff2"/>
         <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
               href="https://assets.opontolaranja.pt/EJRSQgYoZZY2vCFuvAnt66qSVys.woff2"/>
-        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
-              href="https://assets.opontolaranja.pt/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2"/>
+
 
         {customStyles ? <style type="text/css">{customStyles}</style> : null}
     </Helmet>
