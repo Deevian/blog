@@ -21,6 +21,7 @@ const postLinkStyles = css`
 
     text-align: center;
 
+    line-height: 2rem;
     font-size: 1.9rem;
     font-weight: normal;
 
@@ -30,6 +31,7 @@ const postLinkStyles = css`
 const postTitleStyles = css`
     text-align: center;
 
+    line-height: 2rem;
     font-size: 1.9rem;
     font-weight: normal;
     color: #111;
