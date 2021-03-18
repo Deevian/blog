@@ -4,8 +4,8 @@ import * as dayjs from 'dayjs';
 import parse from 'html-react-parser';
 
 interface Props {
-    title: string
     html: string
+    title?: string
     published_at?: string
     slug?: string
     feature_image?: string
@@ -54,9 +54,12 @@ const postImageStyles = css`
 
 export default ({ title, html, published_at, slug, feature_image }: Props) => (
     <>
-        {slug
-            ? <a className={postLinkStyles} href={`/${slug}`}>{title}</a>
-            : <h3 className={postTitleStyles}>{title}</h3>}
+        {title
+            ? slug
+                ? <a className={postLinkStyles} href={`/${slug}`}>{title}</a>
+                : <h3 className={postTitleStyles}>{title}</h3>
+            : null
+        }
 
         {published_at
             ? <abbr className={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
