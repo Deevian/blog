@@ -25,7 +25,7 @@ const postLinkStyles = css`
     font-size: 1.9rem;
     font-weight: normal;
 
-    margin: 4rem 0 0;
+    margin: 4.5rem 0 0;
 `
 
 const postTitleStyles = css`
