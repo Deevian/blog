@@ -36,7 +36,7 @@ const postTitleStyles = css`
     font-weight: normal;
     color: #111;
 
-    margin: 4rem 0 0;
+    margin: 4.5rem 0 0;
 `
 
 const postDateStyles = css`
@@ -44,7 +44,7 @@ const postDateStyles = css`
     font-size: 0.75rem;
     color: #555;
 
-    margin: 0.5rem 0 2rem;
+    margin: 0.5rem 0 1rem;
 `
 
 const postImageStyles = css`
