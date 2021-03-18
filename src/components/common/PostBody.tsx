@@ -10,15 +10,6 @@ interface Props {
     feature_image?: string
 }
 
-const postHeaderStyles = css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin: 0 0 3rem;
-    padding-top: 4rem;
-`
-
 const postLinkStyles = css`
     text-decoration: none;
     color: #111;
@@ -26,6 +17,14 @@ const postLinkStyles = css`
     &:hover {
         text-decoration: underline;
     }
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 1.9rem;
+    font-weight: normal;
+
+    margin: 4rem 0 0;
 `
 
 const postTitleStyles = css`
@@ -36,14 +35,14 @@ const postTitleStyles = css`
     font-weight: normal;
     color: #111;
 
-    margin: 0;
+    margin: 4rem 0 0;
 `
 
 const postDateStyles = css`
     font-size: 0.75rem;
     color: #555;
 
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 2rem;
 `
 
 const postImageStyles = css`
@@ -83,23 +82,21 @@ const postBodyStyles = css`
 `
 
 export default ({ title, html, published_at, slug, feature_image }: Props) => (
-    <article>
-        <div className={postHeaderStyles}>
-            {slug
-                ? <a className={postLinkStyles} href={`/${slug}`}><h3 className={postTitleStyles}>{title}</h3></a>
-                : <h3 className={postTitleStyles}>{title}</h3>}
+    <>
+        {slug
+            ? <a className={postLinkStyles} href={`/${slug}`}>{title}</a>
+            : <h3 className={postTitleStyles}>{title}</h3>}
 
-            {published_at
-                ? <abbr className={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
-                : null
-            }
+        {published_at
+            ? <abbr className={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
+            : null
+        }
 
-            {feature_image ? (
-                <img className={postImageStyles} src={feature_image} alt={title} />
-            ): null}
-        </div>
+        {feature_image ? (
+            <img className={postImageStyles} src={feature_image} alt={title} />
+        ): null}
 
         <section className={postBodyStyles} dangerouslySetInnerHTML={{ __html: html }} />
-    </article>
+    </>
 )
 
