@@ -43,7 +43,7 @@ export default ({ data }: Props) => (
 
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
-                <div className={postContainerStyles} key={index}>
+                <article className={postContainerStyles} key={index}>
                     {index !== 0 ? <div className={postDividerStyles} /> : null}
 
                     <PostBody
@@ -53,7 +53,7 @@ export default ({ data }: Props) => (
                         published_at={node.published_at}
                         feature_image={node.feature_image}
                     />
-                </div>
+                </article>
             ))}
         </section>
     </Layout>

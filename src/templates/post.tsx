@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { css } from '@linaria/core';
 
 import { Layout, Header } from '../components/common'
-import PostBody from "../components/common/PostBody";
+import PostBody from '../components/common/PostBody';
 
 interface Props {
     data: {
@@ -17,6 +18,13 @@ interface Props {
         }
     }
 }
+
+const postContainerStyles = css`
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+`
 
 const ImageMeta = ({ image }) => (
     <Helmet>
@@ -49,12 +57,14 @@ export default ({ data }: Props) => (
 
         {data.ghostPost.feature_image ? <ImageMeta image={data.ghostPost.feature_image} /> : null}
 
-        <PostBody
-            title={data.ghostPost.title}
-            html={data.ghostPost.html}
-            published_at={data.ghostPost.published_at}
-            feature_image={data.ghostPost.feature_image}
-        />
+        <article className={postContainerStyles}>
+            <PostBody
+                title={data.ghostPost.title}
+                html={data.ghostPost.html}
+                published_at={data.ghostPost.published_at}
+                feature_image={data.ghostPost.feature_image}
+            />
+        </article>
     </Layout>
 )
 
