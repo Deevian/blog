@@ -49,9 +49,6 @@ const containerStyles = css`
     padding: 0;
 
     background-color: #fafafa;
-
-    font-family: "PT Serif", serif;
-    font-size: 16px;
 `
 
 const logoSectionStyles = css`
