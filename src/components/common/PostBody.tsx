@@ -1,6 +1,7 @@
 import { css } from '@linaria/core';
 import * as React from 'react';
 import * as dayjs from 'dayjs';
+import parse from 'html-react-parser';
 
 interface Props {
     title: string
@@ -39,6 +40,7 @@ const postTitleStyles = css`
 `
 
 const postDateStyles = css`
+    text-align: center;
     font-size: 0.75rem;
     color: #555;
 
@@ -51,35 +53,6 @@ const postImageStyles = css`
     margin: 1.5rem 0 0;
 `
 
-const postBodyStyles = css`
-    font-weight: normal;
-    line-height: 26px;
-    color: #333;
-
-    li + li {
-        margin-top: 1rem;
-    }
-
-    blockquote {
-        padding-left: 1rem;
-        border-left: 1px solid #666;
-    
-        font-style: italic;
-        font-size: 0.9rem;
-    
-        line-height: 24px;
-
-        margin-bottom: 1rem;
-    }
-
-    a {
-        color: #333;
-    }
-    
-    a:hover {
-        color: #666;
-    }
-`
 
 export default ({ title, html, published_at, slug, feature_image }: Props) => (
     <>
@@ -96,7 +69,7 @@ export default ({ title, html, published_at, slug, feature_image }: Props) => (
             <img className={postImageStyles} src={feature_image} alt={title} />
         ): null}
 
-        <section className={postBodyStyles} dangerouslySetInnerHTML={{ __html: html }} />
+        {parse(html)}
     </>
 )
 

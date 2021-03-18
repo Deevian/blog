@@ -38,6 +38,38 @@ const postContainerStyles = css`
     flex-direction: column;
 
     align-items: center;
+
+    font-weight: normal;
+    line-height: 26px;
+    color: #333;
+
+    & > * {
+        align-self: stretch;
+    }
+    
+    li + li {
+        margin-top: 1rem;
+    }
+    
+    blockquote {
+        padding-left: 1rem;
+        border-left: 1px solid #666;
+    
+        font-style: italic;
+        font-size: 0.9rem;
+    
+        line-height: 24px;
+    
+        margin-bottom: 1rem;
+    }
+    
+    a {
+        color: #333;
+    }
+    
+    a:hover {
+        color: #666;
+    }
 `
 
 export default ({ data }: Props) => (
