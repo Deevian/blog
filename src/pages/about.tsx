@@ -14,7 +14,7 @@ export default () => (
         <Post
             title="Sobre Mim"
             html={`
-                <br/>
+                <p></p>
                 <p>
                     Olá. O meu nome é João. E eu sou... eu. Uma talvez-pessoa que sabe muito pouco
                     sobre nada, e que volta e meia se perde nas coisas estranhas que populam este ponto
