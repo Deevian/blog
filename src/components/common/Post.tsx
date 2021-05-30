@@ -97,40 +97,38 @@ const postImageStyles = css`
     margin: 1.5rem 0 0;
 `
 
-const personalColorStyles = css`
-    color: #CCC;
+const removeMargins = css`
+    margin-bottom: -5rem;
 
-    &:not(:first-of-type):before {
-        border-bottom: 1px solid #CCC;
+    &:not(:first-of-type) > a {
+        margin: 0;
     }
 `
-
-const buildClassName = (className: string, isPersonal: boolean) =>
-    !isPersonal ? className : `${className} ${personalColorStyles}`
-
 
 export default ({ title, html, published_at, slug, feature_image, tags }: Props) => {
     const isPersonal = tags && tags.some(tag => tag.name === 'personal')
 
+    const containerStyles = `${postContainerStyles} ${isPersonal && removeMargins}`
+
     return (
-        <article className={buildClassName(postContainerStyles, isPersonal)}>
+        <article className={containerStyles}>
             {title
                 ? slug
-                    ? <a className={buildClassName(postLinkStyles, isPersonal)} href={`/${slug}`}>{title}</a>
-                    : <h3 className={buildClassName(postTitleStyles, isPersonal)}>{title}</h3>
+                    ? <a className={postLinkStyles} href={`/${slug}`}>{title}</a>
+                    : <h3 className={postTitleStyles}>{title}</h3>
                 : null
             }
 
             {published_at
-                ? <abbr className={buildClassName(postDateStyles, isPersonal)}>{dayjs(published_at).format('LL')}</abbr>
+                ? <abbr className={postDateStyles}>{dayjs(published_at).format('LL')}</abbr>
                 : null
             }
 
             {feature_image ? (
-                <img className={buildClassName(postImageStyles, isPersonal)} src={feature_image} alt={title} />
+                <img className={postImageStyles} src={feature_image} alt={title} />
             ): null}
 
-            {parse(html)}
+            {!isPersonal && parse(html)}
         </article>
     )
 }
