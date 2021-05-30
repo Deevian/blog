@@ -1,9 +1,8 @@
-import { css } from '@linaria/core';
 import * as React from 'react';
 import { graphql } from 'gatsby';
 
 import { Layout, Header } from '../components/common';
-import PostBody from "../components/common/PostBody";
+import Post from '../components/common/Post';
 
 interface Props {
     data: {
@@ -16,61 +15,12 @@ interface Props {
                     html: string
                     published_at: string
                     feature_image?: string
+                    tags?: Array<{ name: string }>
                 }
             }>
         }
     }
 }
-
-const postContainerStyles = css`
-    &:not(:first-child):before {
-        content: '';
-        display: block;
-
-        height: 1px;
-        width: 70%;
-    
-        margin: 10rem 0 6rem;
-        border-bottom: 1px solid #999;
-    }
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    font-weight: normal;
-    line-height: 26px;
-    color: #333;
-
-    & > * {
-        align-self: stretch;
-    }
-    
-    li + li {
-        margin-top: 1rem;
-    }
-    
-    blockquote {
-        padding-left: 1rem;
-        border-left: 1px solid #666;
-    
-        font-style: italic;
-        font-size: 0.9rem;
-    
-        line-height: 24px;
-    
-        margin-bottom: 1rem;
-    }
-    
-    a {
-        color: #333;
-    }
-    
-    a:hover {
-        color: #666;
-    }
-`
 
 export default ({ data }: Props) => (
     <Layout>
@@ -78,15 +28,15 @@ export default ({ data }: Props) => (
 
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
-                <article key={index} className={postContainerStyles}>
-                    <PostBody
-                        title={node.title}
-                        slug={node.slug}
-                        html={node.html}
-                        published_at={node.published_at}
-                        feature_image={node.feature_image}
-                    />
-                </article>
+                <Post
+                    key={index}
+                    title={node.title}
+                    slug={node.slug}
+                    html={node.html}
+                    tags={node.tags}
+                    published_at={node.published_at}
+                    feature_image={node.feature_image}
+                />
             ))}
         </section>
     </Layout>
