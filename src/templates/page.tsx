@@ -35,8 +35,8 @@ function truncate(str, n){
 }
 
 export default ({ data }: Props) => (
-    <Layout showLogo={false}>
-        <Header showLogo={false} />
+    <Layout>
+        <Header />
 
         <Helmet>
             <title>{data.ghostPage.title}</title>
