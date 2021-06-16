@@ -8,6 +8,10 @@ interface Props {
 }
 
 const headerStyles = css`
+    & svg, & image {
+        shape-rendering: geometricPrecision;
+    }
+
     position: relative;
 
     display: flex;
@@ -43,8 +47,13 @@ const mobileImageStyles = css`
 
 const Logo = () => (
     <>
-        <img width="407" height="62" className={desktopImageStyles} src="/logo-desktop.svg" alt="O Ponto Laranja" />
-        <img width="196" height="113" className={mobileImageStyles} src="/logo-mobile.svg" alt="O Ponto Laranja" />
+        <svg className={desktopImageStyles} width="407" height="62">
+            <image xlinkHref="/logo-desktop.svg" width="407" height="62"/>
+        </svg>
+
+        <svg className={mobileImageStyles} width="196" height="113">
+            <image xlinkHref="/logo-mobile.svg" width="196" height="113"/>
+        </svg>
     </>
 )
 
