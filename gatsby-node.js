@@ -10,6 +10,14 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+
+            allGhostPage {
+                edges {
+                    node {
+                        slug
+                    }
+                }
+            }
         }
     `);
 
@@ -29,7 +37,19 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     });
 
+    result.data.allGhostPage.edges.forEach(({node}) => {
+      node.url = `/${node.slug}/`;
+
+      createPage({
+        path: node.url,
+        component: require.resolve('./src/templates/page.tsx'),
+        context: {
+          slug: node.slug,
+        },
+      })
+    });
+
+
     createPage({ path: '/', component: require.resolve('./src/pages/index.tsx') })
     createPage({ path: '/indice', component: require.resolve('./src/pages/toc.tsx') })
-    createPage({ path: '/sobre', component: require.resolve('./src/pages/about.tsx') })
 };
