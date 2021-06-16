@@ -9,9 +9,6 @@ export default function HTML(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
 
-        <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
-              href="https://assets.opontolaranja.pt/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2"/>
-
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
