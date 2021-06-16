@@ -15,53 +15,47 @@ const headerStyles = css`
     align-items: center;
 `
 
-const headerLinkStyles = css`
-    color: #111;
-    text-decoration: none;
+const desktopImageStyles = css`
+    width: 407px;
+    height: auto;
 
-    &:hover {
-        text-decoration: underline;
+    padding-bottom: 1.1rem;
+
+    display: none;
+
+    @media (min-width: 483px) {
+        display: block;
     }
 `
 
-const headerTitleStyles = css`
-    text-align: center;
-    color: #111;
+const mobileImageStyles = css`
+    width: 196px;
+    height: auto;
 
-    font-family: "Playfair Display", serif;
-    font-size: 3.3rem;
-    font-weight: normal;
+    padding-bottom: 1.1rem;
 
-    margin: 0;
-`
+    display: none;
 
-const orangeDotStyles = css`
-    position: relative;
-
-    width: 15px;
-    height: 15px;
-    border-radius: 100px;
-
-    top: -64px;
-    right: -167px;
-
-    @media (max-width: 483px) {
-        top: -64px;
-        right: -58px;
+    @media (max-width: 482px) {
+        display: block;
     }
 `
+
+const Logo = () => (
+    <>
+        <img width="407" height="62" className={desktopImageStyles} src="/logo-desktop.svg" alt="O Ponto Laranja" />
+        <img width="196" height="113" className={mobileImageStyles} src="/logo-mobile.svg" alt="O Ponto Laranja" />
+    </>
+)
 
 export default ({ isIndex = false, showLogo = true }: Props) => (
     <header className={headerStyles}>
         {showLogo ? (
-            <React.Fragment>
-                {!isIndex
-                    ? <a className={headerLinkStyles} href="/"><h1 className={headerTitleStyles}>O Ponto Laranja</h1></a>
-                    : <h1 className={headerTitleStyles}>O Ponto Laranja</h1>
-                }
-
-                <img width="15" height="15" className={orangeDotStyles} alt="O Ponto Laranja" src="/orange.png"/>
-            </ React.Fragment>
+            !isIndex ? (
+                <a href="/" title="O Ponto Laranja" >
+                    <Logo />
+                </a>
+            ) : <Logo />
         ) : null}
 
         <HeaderNav />
