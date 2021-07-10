@@ -20,7 +20,7 @@ const headerStyles = css`
 `
 
 const desktopImageStyles = css`
-    width: 407px;
+    width: 25.438rem;
     height: auto;
 
     padding-bottom: 1.1rem;
@@ -33,7 +33,7 @@ const desktopImageStyles = css`
 `
 
 const mobileImageStyles = css`
-    width: 196px;
+    width: 12.25rem;
     height: auto;
 
     padding-bottom: 1.1rem;

@@ -19,18 +19,18 @@ const postContainerStyles = css`
     align-items: center;
 
     font-weight: normal;
-    line-height: 26px;
+    line-height: 1.6rem;
     color: #333;
 
     &:not(:first-of-type):before {
         content: '';
         display: block;
 
-        height: 1px;
+        height: 0.063rem;
         width: 70%;
 
         margin: 10rem 0 6rem;
-        border-bottom: 1px solid #999;
+        border-bottom: 0.063rem solid #999;
     }
 
     & > * {
@@ -43,12 +43,12 @@ const postContainerStyles = css`
 
     blockquote {
         padding-left: 1rem;
-        border-left: 1px solid #666;
+        border-left: 0.063rem solid #666;
 
         font-style: italic;
         font-size: 0.9rem;
 
-        line-height: 24px;
+        line-height: 1.5rem;
 
         margin-bottom: 1rem;
     }
