@@ -52,27 +52,27 @@ const containerStyles = css`
 `
 
 const logoSectionStyles = css`
-    max-width: 600px;
+    max-width: 31.25rem;
 
     margin-top: 5rem;
     margin-bottom: 20rem;
     margin-right: 8%;
     margin-left: 8%;
 
-    @media (max-width: 600px) {
+    @media (max-width: 31.25rem) {
         margin-top: 2rem;
     }
 `
 
 const logolessSection = css`
-    max-width: 600px;
+    max-width: 31.25rem;
 
     margin-top: 2rem;
     margin-bottom: 20rem;
     margin-right: 8%;
     margin-left: 8%;
 
-    @media (max-width: 600px) {
+    @media (max-width: 31.25rem) {
         margin-top: 2rem;
     }
 `

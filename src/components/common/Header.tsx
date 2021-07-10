@@ -40,7 +40,7 @@ const mobileImageStyles = css`
 
     display: none;
 
-    @media (max-width: 482px) {
+    @media (max-width: 30.125rem) {
         display: block;
     }
 `
