@@ -1,4 +1,4 @@
-import { css } from '@linaria/core';
+import { css } from 'linaria';
 import * as React from 'react';
 
 interface Props {

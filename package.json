@@ -22,13 +22,11 @@
     "eslint-plugin-react": "7.22.0"
   },
   "dependencies": {
-    "@tryghost/helpers": "1.1.37",
-    "@tryghost/helpers-gatsby": "1.0.42",
-    "cheerio": "1.0.0-rc.5",
-    "dayjs": "1.10.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "babel-preset-gatsby": "^2.0.0",
+    "dayjs": "^1.10.7",
     "gatsby": "2.32.3",
-    "gatsby-image": "2.11.0",
-    "gatsby-plugin-linaria": "2.2.0",
+    "gatsby-plugin-linaria": "^3.1.0",
     "gatsby-plugin-no-javascript": "2.0.5",
     "gatsby-plugin-react-helmet": "3.10.0",
     "gatsby-plugin-sitemap": "2.13.0-next.0",
@@ -36,8 +34,9 @@
     "gatsby-source-filesystem": "2.11.0",
     "gatsby-source-ghost": "4.2.3",
     "html-react-parser": "1.2.4",
-    "linaria": "3.0.0-beta.1",
+    "linaria": "2.1.0",
     "lodash": "4.17.20",
+    "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-helmet": "6.1.0"
