@@ -51,5 +51,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
     createPage({ path: '/', component: require.resolve('./src/pages/index.tsx') })
+    createPage({ path: '/d', component: require.resolve('./src/pages/d.tsx') })
     createPage({ path: '/indice', component: require.resolve('./src/pages/toc.tsx') })
 };

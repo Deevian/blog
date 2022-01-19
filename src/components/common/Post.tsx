@@ -105,9 +105,10 @@ const removeMargins = css`
     }
 `
 
-export default ({ title, html, published_at, slug, feature_image, tags }: Props) => {
+export default ({ title, html, published_at, slug, feature_image, tags, is_personal }: Props) => {
     const isPersonal = tags && tags.some(tag => tag.name === 'personal')
-    if (isPersonal) return null;
+    if (isPersonal && !is_personal) return null;
+    if (!isPersonal && is_personal) return null;
 
     const containerStyles = `${postContainerStyles} ${isPersonal && removeMargins}`
 
