@@ -29,6 +29,7 @@ export default ({ data }: Props) => (
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
                 <Post
+                  // @ts-ignore
                     key={index}
                     title={node.title}
                     slug={node.slug}

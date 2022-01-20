@@ -10,6 +10,7 @@ interface Props {
     slug?: string
     feature_image?: string
     tags?: Array<{ name: string }>
+    is_personal?: boolean
 }
 
 const postContainerStyles = css`
@@ -21,6 +22,14 @@ const postContainerStyles = css`
     font-weight: normal;
     line-height: 1.6rem;
     color: #333;
+
+    & > * a {
+        color: #ff4c3c;
+    }
+
+    & > * a:visited, & > * a:active, & > * a:hover {
+        color: #d31100;
+    }
 
     &:not(:first-of-type):before {
         content: '';

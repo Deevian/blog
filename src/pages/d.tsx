@@ -29,6 +29,7 @@ export default ({ data }: Props) => (
         <section>
             {data.allGhostPost.edges.map(({ node }, index) => (
                 <Post
+                  // @ts-ignore
                     key={index}
                     title={node.title}
                     slug={node.slug}
@@ -36,7 +37,7 @@ export default ({ data }: Props) => (
                     tags={node.tags}
                     published_at={node.published_at}
                     feature_image={node.feature_image}
-                    is_personal={true}
+                    is_personal
                 />
             ))}
         </section>
