@@ -28,9 +28,9 @@ export default ({ data }: Props) => (
         <Helmet>
             <title>Índice</title>
             <meta property="og:title" content="O Ponto Laranja // D" />
-            <meta property="og:url" content="https://opontolaranja.pt/d" />
+            <meta property="og:url" content="https://opontolaranja.pt/d/" />
             <meta property="og:type" content="website" />
-            <link rel="canonical" href="https://opontolaranja.pt/d" />
+            <link rel="canonical" href="https://opontolaranja.pt/d/" />
         </Helmet>
 
         <Header isIndex />

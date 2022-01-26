@@ -46,19 +46,29 @@ module.exports = {
         resolveSiteUrl: () => `https://opontolaranja.pt`,
         serialize: ({allGhostPost, allGhostPage}) => {
           const pages = allGhostPage.edges.map(({node}) => ({
-            url: `https://opontolaranja.pt/${node.slug}`,
+            url: `https://opontolaranja.pt/${node.slug}/`,
             lastmod: new Date(node.updated_at).toISOString().split(`T`)[0],
             priority: 0.5
           }))
 
           const posts = allGhostPost.edges.map(({node}) => ({
-            url: `https://opontolaranja.pt/${node.slug}`,
+            url: `https://opontolaranja.pt/${node.slug}/`,
             lastmod: new Date(node.updated_at).toISOString().split(`T`)[0],
             priority: 0.5
           }))
 
           return [{
             url: `https://opontolaranja.pt`,
+            changefreq: 'daily',
+            lastmod: new Date().toISOString().split(`T`)[0],
+            priority: 1,
+          }, {
+            url: `https://opontolaranja.pt/d/`,
+            changefreq: 'daily',
+            lastmod: new Date().toISOString().split(`T`)[0],
+            priority: 1,
+          }, {
+            url: `https://opontolaranja.pt/indice/`,
             changefreq: 'daily',
             lastmod: new Date().toISOString().split(`T`)[0],
             priority: 1,

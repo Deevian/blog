@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     result.data.allGhostPost.edges.forEach(({node}) => {
-        node.url = `/${node.slug}`;
+        node.url = `/${node.slug}/`;
 
         createPage({
             path: node.url,
@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
 
     result.data.allGhostPage.edges.forEach(({node}) => {
-      node.url = `/${node.slug}`;
+      node.url = `/${node.slug}/`;
 
       createPage({
         path: node.url,

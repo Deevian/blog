@@ -42,10 +42,10 @@ export default ({ data }: Props) => (
         <Helmet>
             <title>{data.ghostPost.title}</title>
             <meta property="og:title" content={data.ghostPost.title} />
-            <meta property="og:url" content={`https://opontolaranja.pt/${data.ghostPost.slug}`} />
+            <meta property="og:url" content={`https://opontolaranja.pt/${data.ghostPost.slug}/`} />
             <meta property="og:type" content="article" />
             <meta property="og:description" content={truncate(data.ghostPost.excerpt, 200)} />
-            <link rel="canonical" href={`https://opontolaranja.pt/${data.ghostPost.slug}`} />
+            <link rel="canonical" href={`https://opontolaranja.pt/${data.ghostPost.slug}/`} />
         </Helmet>
 
         {data.ghostPost.feature_image ? <ImageMeta image={data.ghostPost.feature_image} /> : null}
