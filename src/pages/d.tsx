@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import { Layout, Header } from '../components/common';
 import Post from '../components/common/Post';
@@ -24,6 +25,14 @@ interface Props {
 
 export default ({ data }: Props) => (
     <Layout>
+        <Helmet>
+            <title>Índice</title>
+            <meta property="og:title" content="O Ponto Laranja // D" />
+            <meta property="og:url" content="https://opontolaranja.pt/d" />
+            <meta property="og:type" content="website" />
+            <link rel="canonical" href="https://opontolaranja.pt/d" />
+        </Helmet>
+
         <Header isIndex />
 
         <section>

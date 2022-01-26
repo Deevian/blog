@@ -69,6 +69,10 @@ export default ({ data }: Props) => {
         <Layout>
             <Helmet>
                 <title>Índice</title>
+                <meta property="og:title" content="O Ponto Laranja // Índice" />
+                <meta property="og:url" content="https://opontolaranja.pt/indice" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://opontolaranja.pt/indice" />
             </Helmet>
 
             <Header />
