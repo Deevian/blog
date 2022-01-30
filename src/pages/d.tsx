@@ -26,8 +26,8 @@ interface Props {
 export default ({ data }: Props) => (
     <Layout>
         <Helmet>
-            <title>O Ponto Laranja</title>
-            <meta property="og:title" content="O Ponto Laranja // D" />
+            <title>O Ponto Laranja // d</title>
+            <meta property="og:title" content="O Ponto Laranja // d" />
             <meta property="og:url" content="https://opontolaranja.pt/d/" />
             <meta property="og:type" content="website" />
             <link rel="canonical" href="https://opontolaranja.pt/d/" />
