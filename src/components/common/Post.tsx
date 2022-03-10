@@ -101,9 +101,16 @@ const postDateStyles = css`
 `
 
 const postImageStyles = css`
-    width: 120%;
+    width: 140%;
 
     margin: 1.5rem 0 0;
+    margin-left: -20%;
+
+    
+    @media (max-width: 31.25rem) {
+        width: 100%;
+        margin-left: 0;
+    }
 `
 
 const removeMargins = css`
