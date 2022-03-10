@@ -16,6 +16,7 @@ interface Props {
                     id: string
                     slug: string
                     title: string
+                    tags?: Array<{ name: string }>
                 }
             }>
         }
@@ -81,6 +82,10 @@ export default ({ data }: Props) => {
                 {data.allGhostPost.edges.map(({ node }) => {
                     const date = dayjs(node.published_at);
                     const year = date.year();
+                    const tags = node.tags;
+
+                    const isUnlisted = tags && tags.some(tag => tag.name === 'unlisted')
+                    if (isUnlisted) return null;
 
                     const post = (
                         <Fragment key={node.id}>
