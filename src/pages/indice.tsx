@@ -84,8 +84,8 @@ export default ({ data }: Props) => {
                     const year = date.year();
                     const tags = node.tags;
 
-                    const isUnlisted = tags && tags.some(tag => tag.name === 'unlisted')
-                    if (isUnlisted) return null;
+                    const isPersonal = tags && tags.some(tag => tag.name === 'personal')
+                    if (isPersonal) return null;
 
                     const post = (
                         <Fragment key={node.id}>
