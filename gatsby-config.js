@@ -10,7 +10,7 @@ module.exports = {
       options: ghostConfig
     },
     `gatsby-plugin-react-helmet`,
-    {resolve: 'gatsby-matomo'},
+    // {resolve: 'gatsby-matomo'},
     {resolve: 'gatsby-plugin-typescript'},
     {resolve: 'gatsby-plugin-linaria'},
   ],
