@@ -24,11 +24,11 @@ const postContainerStyles = css`
     color: #333;
 
     & > * a {
-        color: #ff4c3c;
+        color: #d91100;
     }
 
     & > * a:visited, & > * a:active, & > * a:hover {
-        color: #d31100;
+        color: #ca1000;
     }
 
     &:not(:first-of-type):before {
