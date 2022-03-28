@@ -17,7 +17,7 @@ const navLinkStyles = css`
     padding: 0 1rem;
     line-height: 1.5rem;
     font-size: 0.85rem;
-    color: #888;
+    color: #666;
 
     text-decoration: none;
 
