@@ -12,6 +12,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     // {resolve: 'gatsby-matomo'},
     {resolve: 'gatsby-plugin-typescript'},
-    {resolve: 'gatsby-plugin-linaria'},
+    {resolve: 'gatsby-plugin-linaria'}
   ],
 };
