@@ -31,6 +31,7 @@ export default ({ data }: Props) => (
       <meta property="og:url" content="https://opontolaranja.pt/d/" />
       <meta property="og:type" content="website" />
       <link rel="canonical" href="https://opontolaranja.pt/d/" />
+      <meta name="robots" content="noindex" />
     </Helmet>
 
     <Header isIndex />
