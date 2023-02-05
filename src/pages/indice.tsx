@@ -82,6 +82,10 @@ export default ({ data }: Props) => {
                 {data.allGhostPost.edges.map(({ node }) => {
                     const date = dayjs(node.published_at);
                     const year = date.year();
+                    const tags = node.tags;
+
+                    const isPersonal = tags && tags.some(tag => tag.name === 'personal')
+                    if (isPersonal) return null;
 
                     const post = (
                         <Fragment key={node.id}>
