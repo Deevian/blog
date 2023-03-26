@@ -1,5 +1,4 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
 
 const fullstoryScriot = `
   window['_fs_host'] = 'fullstory.com';
@@ -23,14 +22,14 @@ const fullstoryScriot = `
   if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
   g._v="1.3.0";
   })(window,document,window['_fs_namespace'],'script','user');
-`
+`;
 
 export default function HTML(props) {
   return (
     <html lang="pt" {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
 
         {props.headComponents}
@@ -47,14 +46,5 @@ export default function HTML(props) {
         <script async dangerouslySetInnerHTML={{ __html: fullstoryScriot }} />
       </body>
     </html>
-  )
-}
-
-HTML.propTypes = {
-  htmlAttributes: PropTypes.object,
-  headComponents: PropTypes.array,
-  bodyAttributes: PropTypes.object,
-  preBodyComponents: PropTypes.array,
-  body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
+  );
 }

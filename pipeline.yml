@@ -1,0 +1,60 @@
+---
+resources:
+- name: repo
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/Deevian/blog.git
+
+- name: node-image
+  type: registry-image
+  source:
+    repository: node
+    tag: 19-alpine
+
+jobs:
+- name: build
+  public: true
+  plan:
+  - get: node-image
+  - get: repo
+    trigger: true
+  - task: install
+    image: node-image
+    config:
+      inputs:
+      - name: repo
+      outputs:
+      - name: dependencies
+        path: repo/.yarn
+      platform: linux
+      run:
+        path: yarn
+        dir: repo
+  - task: build
+    image: node-image
+    config:
+      inputs:
+      - name: repo
+      - name: dependencies
+        path: repo/.yarn
+      platform: linux
+      run:
+        path: yarn
+        args: ["build"]
+        dir: repo
+      outputs:
+      - name: artifacts
+        path: repo/public
+  - task: deploy
+    image: node-image
+    config:
+      inputs:
+      - name: repo
+      - name: artifacts
+        path: repo/public
+      platform: linux
+      run:
+        path: sh
+        args:
+        - cp -r repo/public/* /mnt/www-data/lounge/opontolaranja/

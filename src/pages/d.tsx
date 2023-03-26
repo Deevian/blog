@@ -1,26 +1,26 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
+import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
-import { Layout, Header } from '../components/common';
-import Post from '../components/common/Post';
+import { Layout, Header } from "../components/common";
+import Post from "../components/common/Post";
 
 interface Props {
   data: {
     allGhostPost: {
       edges: Array<{
         node: {
-          id: string
-          slug: string
-          title: string
-          html: string
-          published_at: string
-          feature_image?: string
-          tags?: Array<{ name: string }>
-        }
-      }>
-    }
-  }
+          id: string;
+          slug: string;
+          title: string;
+          html: string;
+          published_at: string;
+          feature_image?: string;
+          tags?: Array<{ name: string }>;
+        };
+      }>;
+    };
+  };
 }
 
 export default ({ data }: Props) => (
@@ -55,15 +55,13 @@ export default ({ data }: Props) => (
 );
 
 export const pageQuery = graphql`
-    {
-        allGhostPost(
-            sort: { order: DESC, fields: [published_at] },
-        ) {
-          edges {
-            node {
-              ...GhostPostFields
-            }
-          }
+  {
+    allGhostPost(sort: { published_at: DESC }) {
+      edges {
+        node {
+          ...GhostPostFields
         }
+      }
     }
+  }
 `;

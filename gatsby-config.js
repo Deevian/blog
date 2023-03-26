@@ -9,9 +9,8 @@ module.exports = {
       resolve: `gatsby-source-ghost`,
       options: ghostConfig
     },
-    `gatsby-plugin-react-helmet`,
-    // {resolve: 'gatsby-matomo'},
-    {resolve: 'gatsby-plugin-typescript'},
-    {resolve: 'gatsby-plugin-linaria'}
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-linaria',
+    'gatsby-plugin-react-helmet'
   ],
 };

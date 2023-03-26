@@ -101,6 +101,14 @@ function getPostBodyComponentsNoJS(postBodyComponents, pluginOptions) {
       return false
     }
 
+    // Remove the infamous "_gatsby-scripts", introduced in Gatsby 5.2.0
+    if (
+      postBodyComponent.props.sliceId &&
+      postBodyComponent.props.sliceId === "_gatsby-scripts"
+    ) {
+        return false
+    }
+
     if (postBodyComponent.props.src?.indexOf("polyfill") > -1) {
       return false
     }

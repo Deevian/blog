@@ -1,27 +1,27 @@
-import { css } from 'linaria';
 import * as React from 'react';
+import { css } from "@linaria/core";
 
 interface Props {
-    year: number
+  year: number;
 }
 
 const dividerStyles = css`
-    text-align: left;
+  text-align: left;
 
-    width: 100%;
-    font-size: 0.8rem;
+  width: 100%;
+  font-size: 0.8rem;
 
-    color: #666;
+  color: #666;
 
-    margin: 2rem 0 1rem;
+  margin: 2rem 0 1rem;
 
-    border-bottom: 1px solid #AAA;
-`
+  border-bottom: 1px solid #aaa;
+`;
 
 export default ({ year }: Props) => (
-    <React.Fragment>
-        <div className={dividerStyles}>
-            <span>{year}</span>
-        </div>
-    </React.Fragment>
+  <>
+    <div className={dividerStyles}>
+      <span>{year}</span>
+    </div>
+  </>
 );
