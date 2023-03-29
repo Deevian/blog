@@ -1,0 +1,33 @@
+---
+kind: pipeline
+type: docker
+name: deploy
+
+volumes:
+- name: deploy-path
+  host:
+    path: /mnt/www-data/opontolaranja
+
+steps:
+- name: install dependencies
+  image: node:19-alpine
+  commands:
+  - yarn config set enableTelemetry 0
+  - yarn
+
+- name: build
+  image: node:19-alpine
+  commands:
+  - yarn gatsby telemetry --disable
+  - yarn build
+
+- name: deploy public folder
+  image: node:19-alpine
+  volumes:
+  - name: deploy-path
+    path: /www-data
+  commands:
+  - rm -rf /www-data/*
+  - cp -rp ./public/* /www-data
+
+...
